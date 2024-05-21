@@ -1,15 +1,11 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "About";
 ---
-
-<body>
-    <Header />
-
-    <h1>About GAQBC</h1>
+<BaseLayout pageTitle={pageTitle}>
+  test
     <p>sus impostor</p>
     <script>
         import "../scripts/menu.js";
     </script>
-</body>
+</BaseLayouts>

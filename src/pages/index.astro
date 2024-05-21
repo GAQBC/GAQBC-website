@@ -1,21 +1,7 @@
 ---
-import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "GAQBC";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>GAQBC</title>
-	</head>
-	<body>
-		<Header />
-
-		<h1>Astro</h1>
-		<script>
-			import "../scripts/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  test
+</BaseLayout>

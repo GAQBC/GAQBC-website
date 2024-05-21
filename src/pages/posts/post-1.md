@@ -1,10 +1,11 @@
 ---
-import '../styles/global.css';
-
 title: 'RTMS wins MSNCT'
 pubDate: 2024-05-21
 description: 'River Trail Middle School wins the 2024 Middle School National Championship'
 author: 'Kaiden Lee'
+image:
+    url: 'https://docs.astro.build/assets/full-logo-light.png'
+    alt: 'The full Astro logo.'
 tags: ["msnct"]
 ---
 # My First Blog Post

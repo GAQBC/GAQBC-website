@@ -2,9 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Blog";
 const allPosts = await Astro.glob('../pages/posts/*.md');
+const bannerMain = "Blog";
+const bannerContent = "sussy baka";
 ---
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout pageTitle={pageTitle}, main={bannerMain}, content={bannerContent}>
     <p>asdasdasdasdasd</p>
     {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 </BaseLayout>

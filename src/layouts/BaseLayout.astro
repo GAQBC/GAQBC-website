@@ -2,8 +2,9 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
+import Banner from '../components/Banner.astro';
 
-const { pageTitle } = Astro.props
+const { pageTitle, main, content } = Astro.props
 ---
 
 <html lang="en">
@@ -14,6 +15,7 @@ const { pageTitle } = Astro.props
 	</head>
 	<body>
 		<Header />
+        <Banner main={main}, content={content} />
         <slot />
 		<script>
 			import "../scripts/menu.js";

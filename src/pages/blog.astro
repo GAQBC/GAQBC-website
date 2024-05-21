@@ -6,7 +6,7 @@ const bannerMain = "Blog";
 const bannerContent = "sussy baka";
 ---
 
-<BaseLayout pageTitle={pageTitle}, main={bannerMain}, content={bannerContent}>
+<BaseLayout pageTitle={pageTitle}, main={bannerMain}>
     <p>asdasdasdasdasd</p>
     {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
 </BaseLayout>

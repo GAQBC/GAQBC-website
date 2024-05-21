@@ -15,7 +15,7 @@ const { pageTitle, main, content } = Astro.props
 	</head>
 	<body>
 		<Header />
-        <Banner main={main}, content={content} />
+        <Banner main={main} />
         <slot />
 		<script>
 			import "../scripts/menu.js";

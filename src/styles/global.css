@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css?family=Lora');
 
+/* colors */
+* {
+    --textcolor: black;
+    --textcolor-dark: white;
+    --bgcolor: white;
+    --bgcolor-dark: #0d0950;
+    --headerbgcolor: #EEE;
+    --headerbgcolor-dark: #333;
+    --linkcolor-dark: #87CEEB;
+    --linkhovercolor: #888;
+    --iconmove-desktop: 13px;
+    --iconmove-mobile: 5px;
+}
+
 body {
     font-family: Lora;
     margin: 0 auto;
     width: 100%;
     padding: 1rem;
     line-height: 1.5;
-}
-
-* {
     box-sizing: border-box;
 }
 
@@ -18,127 +29,115 @@ h1 {
     font-size: 2.5rem;
 }
 
-.logo > h1 > a {
-    color: black;
-    text-decoration: none;
+html:not(.dark) {
+    background-color: var(--bgcolor);
+    & h1, h2, h3, h4, h5, h6, p, span {
+        color: var(--textcolor);
+    }
+    & .logo > h1 > a {
+        color: var(--textcolor);
+    }
 }
 
-.dark .logo > h1 > a {
-    color: white;
-}
-
-html.dark {
-    background-color: #0d0950;
-    color: #fff;
-}
-
-.dark .nav-links a {
-    color: #87CEEB;
-}
-
-.dark .lucide-menu {
-    fill: white;
+html:is(.dark) {
+    background-color: var(--bgcolor-dark);
+    & h1, h2, h3, h4, h5, h6, p, span {
+        color: var(--textcolor-dark);
+    }
+    & .logo > h1 > a {
+        color: var(--textcolor-dark);
+    }
+    & .nav-links a {
+        color: var(--linkcolor-dark);
+    }
+    & .lucide-menu {
+        fill: white;
+    }
 }
 
 .logo {
     display: inline-block;
     margin-left: 10px;
-}
-.logo > h1 {
-    margin-top: 0px;
-}
-
-.nav-links a {
-    display: block;
-    text-align: center;
-    padding: 10px 0;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.nav-links a:hover,
-.nav-links a:focus {
-    color: #888888;
-}
-
-.expanded {
-    display: unset;
-}
-
-.themeicon {
-    display: inline-block;
-    vertical-align: middle;
-    cursor: pointer;
+    & > h1 {
+        margin-top: 0px;
+        & > a {
+            text-decoration: none;
+        }
+    }
 }
 
 .hamburger {
-    padding: 10px 20px;
-    cursor: pointer;
     display: inline-block;
     vertical-align: middle;
+    cursor: pointer;
+    padding: 10px 20px;
 }
 
 .icons {
     float: right;
     margin-right: 10px;
+    & > .themeicon {
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+    }
+}
+
+.nav-links {
+    & a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+        &:hover, &:focus {
+            color: var(--linkhovercolor);
+        }
+    }
+    & .expanded {
+        display: unset;
+    }
 }
 
 @media screen and (min-width: 630px) {
     .nav-links {
         display: inline-block;
-        position: static;
         width: auto;
-        background: none;
+        & > a {
+            display: inline-block;
+            padding: 15px 10px 15px 20px;
+        }
     }
-
-    .nav-links > a:first-of-type {
-        margin-left: 0px;
-        padding-left: 0px;
-    }
-
-    .nav-links a {
-        display: inline-block;
-        padding: 15px 20px;
-    }
-
     .hamburger {
         display: none;
-    }
-    
+    } 
     .header {
         margin-left: 10px;
-    }
-
-    .header-full {
-        background-color: #eeeeee;
+        background-color: var(--headerbgcolor);
         margin-bottom: 10px;
     }   
-    .dark .header-full {
-        background-color: #999;
+    .dark .header {
+        background-color: var(--headerbgcolor-dark);
     }
     .icons {
-        transform: translateY(13px);
+        transform: translateY(var(--iconmove-desktop));
     }
 }
 
 @media screen and (max-width: 630px) {
     .nav-links {
         display: none;
-    }
-    .nav-links.expanded > a {
-        padding: 10px;
-        max-width: 40px;
-    }
-    .nav-links.expanded {
-        background-color: #eeeeee;
-        margin: 10px;
-        display: block;
-    }
-    .dark .nav-links.expanded {
-        background-color: #999;
+        &.expanded {
+            background-color: var(--headerbgcolor);
+            margin: 10px;
+            display: block;
+            & > a {
+                padding: 10px;
+                max-width: 40px;
+                display: block;
+            }
+        }
     }
     .icons {
-        transform: translateY(5px);
+        transform: translateY(var(--iconmove-mobile));
     }
 }

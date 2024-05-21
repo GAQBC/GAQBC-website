@@ -4,7 +4,6 @@ body {
     font-family: Lora;
     margin: 0 auto;
     width: 100%;
-    max-width: 80ch;
     padding: 1rem;
     line-height: 1.5;
 }
@@ -19,15 +18,35 @@ h1 {
     font-size: 2.5rem;
 }
 
+.logo > h1 > a {
+    color: black;
+    text-decoration: none;
+}
+
+.dark .logo > h1 > a {
+    color: white;
+}
+
 html.dark {
     background-color: #0d0950;
     color: #fff;
 }
 
 .dark .nav-links a {
-    color: #fff;
+    color: #87CEEB;
 }
 
+.dark .lucide-menu {
+    fill: white;
+}
+
+.logo {
+    display: inline-block;
+    margin-left: 10px;
+}
+.logo > h1 {
+    margin-top: 0px;
+}
 
 .nav-links a {
     display: block;
@@ -49,25 +68,33 @@ html.dark {
 
 .themeicon {
     display: inline-block;
-    top: 100px;
     vertical-align: middle;
+    cursor: pointer;
 }
 
 .hamburger {
-    padding-right: 20px;
+    padding: 10px 20px;
     cursor: pointer;
     display: inline-block;
     vertical-align: middle;
 }
 
+.icons {
+    float: right;
+    margin-right: 10px;
+}
 
-@media screen and (min-width: 636px) {
+@media screen and (min-width: 600px) {
     .nav-links {
-        margin-left: 5em;
         display: inline-block;
         position: static;
         width: auto;
         background: none;
+    }
+
+    .nav-links > a:first-of-type {
+        margin-left: 0px;
+        padding-left: 0px;
     }
 
     .nav-links a {
@@ -79,18 +106,39 @@ html.dark {
         display: none;
     }
     
+    .header {
+        margin-left: 10px;
+    }
+
+    .header-full {
+        background-color: #eeeeee;
+        margin-bottom: 10px;
+    }   
+    .dark .header-full {
+        background-color: #999;
+    }
+    .icons {
+        transform: translateY(13px);
+    }
 }
 
-@media screen and (max-width: 636px) {
+@media screen and (max-width: 600px) {
     .nav-links {
         display: none;
     }
     .nav-links.expanded > a {
-        padding: 10px 4px;
+        padding: 10px;
         max-width: 40px;
     }
     .nav-links.expanded {
-        margin-top: 20px;
+        background-color: #eeeeee;
+        margin: 10px;
         display: block;
+    }
+    .dark .nav-links.expanded {
+        background-color: #999;
+    }
+    .icons {
+        transform: translateY(5px);
     }
 }

@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 title: 'RTMS wins MSNCT'
 pubDate: 2024-05-21
 description: 'River Trail Middle School wins the 2024 Middle School National Championship'

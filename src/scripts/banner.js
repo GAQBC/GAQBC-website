@@ -1,7 +1,7 @@
 function arrow(a) {
     a = Number(a);
-    const ele = document.getElementsByClassName("banner")?.[0];
-    const bgprop = ele.style["background-image"];
+    const ele = document.getElementsByClassName("banner-background")?.[0];
+    const bgprop = ele.getAttribute("src");
     let number = Number(bgprop.match(/\d/)?.[0]);
     let newNumber;
     if (number == 6 && a == 1) {
@@ -15,7 +15,7 @@ function arrow(a) {
     let dotsarray = Array(6).fill("<span class=\"dot\"></span>");
     dotsarray[newNumber - 1] = "<span class=\"dot dot-active\"></span>";
     dotsele.innerHTML = dotsarray.join("\n");
-    ele.style["background-image"] = bgprop.replace(number, newNumber);
+    ele.setAttribute("src", bgprop.replace(number, newNumber));
 }
 
 function leftarrow() {

@@ -1,10 +1,24 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Header from '../components/Header.astro';
 const { frontmatter } = Astro.props;
 ---
-<BaseLayout pageTitle={frontmatter.title}>
-    <p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
-    <p>Written by: {frontmatter.author}</p>
-    <hr>
-    <slot />
-</BaseLayout>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{frontmatter.title}</title>
+	</head>
+	<body>
+		<Header />
+        <p>Published on: {frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")}</p>
+        <p>Written by: {frontmatter.author}</p>
+        <hr>
+        <slot />
+		<script>
+			import "../scripts/menu.js";
+            import "../scripts/banner.js";
+		</script>
+	</body>
+</html>

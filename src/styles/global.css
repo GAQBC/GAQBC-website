@@ -90,6 +90,11 @@ b {
   display: none;
 }
 
+.entry:first-of-type {
+  margin-top: 40px;
+}
+
+.entry > 
 .banner {
   height: max(33vw, 250px);
   width: 100%;
@@ -104,6 +109,7 @@ b {
     object-fit: cover;
     position: absolute;
     border-radius: 10px;
+    filter: blur(2.5px);
   }
 
   & > .banner-inner {
@@ -163,6 +169,7 @@ b {
     transform: translateY(var(--dots-vert)) translateX(calc(50vw - 90px));
     border-radius: 10px 10px 0px 0px;
     background-color: white;
+    padding-bottom: 6px;
 
     & > .dot {
       height: 15px;

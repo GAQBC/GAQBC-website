@@ -85,6 +85,10 @@ b {
   }
 }
 
+.invisible {
+  display: none;
+}
+
 .banner {
   height: 33vw;
   width: 100%;

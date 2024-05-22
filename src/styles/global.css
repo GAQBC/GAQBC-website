@@ -101,8 +101,8 @@ b {
     height: calc(33vw - 10px);
     min-height: 250px;
     object-fit: cover;
-    z-index: -1;
     position: absolute;
+    border-radius: 10px;
   }
 
   &>.banner-inner {

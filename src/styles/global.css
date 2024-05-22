@@ -221,8 +221,8 @@ html:is(.dark) {
     color: var(--linkcolor-dark);
   }
 
-  & .lucide-menu {
-    fill: white;
+  & svg.lucide-menu {
+    stroke: white;
   }
 }
 
@@ -276,5 +276,9 @@ html:is(.dark) {
 
   .icons {
     transform: translateY(var(--iconmove-mobile));
+  }
+
+  html.dark .nav-links.expanded {
+    background-color: var(--headerbgcolor-dark);
   }
 }

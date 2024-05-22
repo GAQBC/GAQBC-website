@@ -11,11 +11,12 @@ function arrow(a) {
     } else {
         newNumber = number + a;
     }
+    const invisele = document.getElementById(String("slide" + newNumber));
+    ele.setAttribute("src", invisele.getAttribute("src"));
     const dotsele = document.getElementsByClassName("banner-dots")?.[0];
     let dotsarray = Array(6).fill("<span class=\"dot\"></span>");
     dotsarray[newNumber - 1] = "<span class=\"dot dot-active\"></span>";
     dotsele.innerHTML = dotsarray.join("\n");
-    ele.setAttribute("src", bgprop.replace(number, newNumber));
 }
 
 function leftarrow() {

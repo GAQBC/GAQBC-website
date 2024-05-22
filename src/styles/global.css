@@ -100,6 +100,7 @@ b {
     width: calc(100vw - 30px);
     height: calc(33vw - 10px);
     min-height: 250px;
+    z-index: -1;
     object-fit: cover;
     position: absolute;
     border-radius: 10px;

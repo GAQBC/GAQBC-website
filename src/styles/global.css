@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Lora');
+@import url("https://fonts.googleapis.com/css?family=Lora");
 
 /* colors */
 * {
@@ -6,10 +6,10 @@
   --textcolor-dark: white;
   --bgcolor: white;
   --bgcolor-dark: #0d0950;
-  --headerbgcolor: #EEE;
+  --headerbgcolor: #eee;
   --headerbgcolor-dark: #333;
-  --linkcolor: #00F;
-  --linkcolor-dark: #87CEEB;
+  --linkcolor: #00f;
+  --linkcolor-dark: #87ceeb;
   --linkhovercolor: #888;
 }
 
@@ -42,10 +42,10 @@ b {
 .logo {
   display: inline-block;
 
-  &>h1 {
+  & > h1 {
     margin-top: 0px;
 
-    &>a {
+    & > a {
       text-decoration: none;
     }
   }
@@ -61,7 +61,7 @@ b {
 .icons {
   float: right;
 
-  &>.themeicon {
+  & > .themeicon {
     display: inline-block;
     vertical-align: middle;
     cursor: pointer;
@@ -96,7 +96,7 @@ b {
   background-size: 100vw 33vw;
   margin-top: 20px;
 
-  &>img {
+  & > img {
     width: calc(100vw - 30px);
     height: calc(33vw - 10px);
     min-height: 250px;
@@ -106,26 +106,26 @@ b {
     border-radius: 10px;
   }
 
-  &>.banner-inner {
+  & > .banner-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
     width: 100%;
-    &>h1 {
+    & > h1 {
       text-align: center;
       vertical-align: middle;
       color: white !important;
       font-size: min(7vw, 70pt);
     }
 
-    &>.banner-arrow {
+    & > .banner-arrow {
       vertical-align: middle;
       width: fit-content;
       height: auto;
       visibility: hidden;
 
-      &>svg {
+      & > svg {
         width: 5vw;
         height: auto;
         visibility: visible !important;
@@ -136,13 +136,13 @@ b {
   }
 
   @media screen and (max-width: 430px) {
-    .banner > .banner-innert > h1 { 
+    .banner > .banner-innert > h1 {
       font-size: 10vw;
     }
   }
 
   @media screen and (max-width: 760px) {
-    * { 
+    * {
       --dots-vert: -19px;
     }
   }
@@ -156,15 +156,15 @@ b {
       --dots-vert: -29px;
     }
   }
-  
-  &>.banner-dots {
+
+  & > .banner-dots {
     width: 160px;
     height: 20px;
     transform: translateY(var(--dots-vert)) translateX(calc(50vw - 90px));
     border-radius: 10px 10px 0px 0px;
     background-color: white;
 
-    &>.dot {
+    & > .dot {
       height: 15px;
       width: 15px;
       margin: 3px;
@@ -177,7 +177,7 @@ b {
       }
     }
 
-    &>.dot:first-of-type {
+    & > .dot:first-of-type {
       margin-left: 10px;
     }
   }
@@ -187,14 +187,7 @@ b {
 html:not(.dark) {
   background-color: var(--bgcolor);
 
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span,
+  & h1, h2, h3, h4, h5, h6, p, span,
   li {
     color: var(--textcolor);
   }
@@ -203,7 +196,7 @@ html:not(.dark) {
     color: var(--linkcolor);
   }
 
-  & .logo>h1>a {
+  & .logo > h1 > a {
     color: var(--textcolor);
   }
 
@@ -215,19 +208,12 @@ html:not(.dark) {
 html:is(.dark) {
   background-color: var(--bgcolor-dark);
 
-  & h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  span,
+  & h1, h2, h3, h4, h5, h6, p, span,
   li {
     color: var(--textcolor-dark);
   }
 
-  & .logo>h1>a {
+  & .logo > h1 > a {
     color: var(--textcolor-dark);
   }
 
@@ -246,7 +232,7 @@ html:is(.dark) {
     display: inline-block;
     width: auto;
 
-    &>a {
+    & > a {
       display: inline-block;
       padding: 15px 10px 15px 20px;
     }
@@ -280,7 +266,7 @@ html:is(.dark) {
       border-radius: 10px;
       display: block;
 
-      &>a {
+      & > a {
         padding: 10px;
         max-width: 40px;
         display: block;

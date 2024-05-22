@@ -8,6 +8,7 @@
   --bgcolor-dark: #0d0950;
   --headerbgcolor: #EEE;
   --headerbgcolor-dark: #333;
+  --linkcolor: #00F;
   --linkcolor-dark: #87CEEB;
   --linkhovercolor: #888;
 }
@@ -195,6 +196,10 @@ html:not(.dark) {
   span,
   li {
     color: var(--textcolor);
+  }
+
+  & a {
+    color: var(--linkcolor);
   }
 
   & .logo>h1>a {

@@ -93,7 +93,7 @@ b {
 
   &>img {
     width: calc(100vw - 30px);
-    height: auto;
+    height: calc(33vw - 10px);
     z-index: -1;
     position: absolute;
   }
@@ -129,7 +129,7 @@ b {
   &>.banner-dots {
     width: 160px;
     height: 20px;
-    transform: translateY(-19px) translateX(calc(50vw - 80px));
+    transform: translateY(-30px) translateX(calc(50vw - 80px));
     border-radius: 10px 10px 0px 0px;
     background-color: white;
 

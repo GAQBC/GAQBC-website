@@ -114,7 +114,7 @@ b {
       text-align: center;
       vertical-align: middle;
       color: white !important;
-      font-size: 5vw;
+      font-size: min(7vw, 70pt);
     }
 
     &>.banner-arrow {
@@ -133,21 +133,32 @@ b {
     }
   }
 
-  @media screen and (max-width: 788px) {
-    * { 
-      --dots-vert: -20px;
+  @media screen and (max-width: 430px) {
+    .banner > .banner-innert > h1 { 
+      font-size: 10vw;
     }
   }
-  @media screen and (min-width: 788px) {
+
+  @media screen and (max-width: 760px) {
+    * { 
+      --dots-vert: -19px;
+    }
+  }
+  @media screen and (760px < width < 787px) {
     * {
-      --dots-vert: -30px;
+      --dots-vert: calc(-37.037vw + 262.48px);
+    }
+  }
+  @media screen and (min-width: 787px) {
+    * {
+      --dots-vert: -29px;
     }
   }
   
   &>.banner-dots {
     width: 160px;
     height: 20px;
-    transform: translateY(var(--dots-vert)) translateX(calc(50vw - 80px));
+    transform: translateY(var(--dots-vert)) translateX(calc(50vw - 90px));
     border-radius: 10px 10px 0px 0px;
     background-color: white;
 

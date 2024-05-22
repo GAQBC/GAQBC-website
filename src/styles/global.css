@@ -90,7 +90,7 @@ b {
 }
 
 .banner {
-  height: 33vw;
+  height: max(33vw, 250px);
   width: 100%;
   background-size: 100vw 33vw;
   margin-top: 20px;
@@ -98,6 +98,8 @@ b {
   &>img {
     width: calc(100vw - 30px);
     height: calc(33vw - 10px);
+    min-height: 250px;
+    object-fit: cover;
     z-index: -1;
     position: absolute;
   }
@@ -109,6 +111,7 @@ b {
     height: 100%;
     width: 100%;
     &>h1 {
+      text-align: center;
       vertical-align: middle;
       color: white !important;
       font-size: 5vw;
@@ -130,10 +133,21 @@ b {
     }
   }
 
+  @media screen and (max-width: 788px) {
+    * { 
+      --dots-vert: -20px;
+    }
+  }
+  @media screen and (min-width: 788px) {
+    * {
+      --dots-vert: -30px;
+    }
+  }
+  
   &>.banner-dots {
     width: 160px;
     height: 20px;
-    transform: translateY(-30px) translateX(calc(50vw - 80px));
+    transform: translateY(var(--dots-vert)) translateX(calc(50vw - 80px));
     border-radius: 10px 10px 0px 0px;
     background-color: white;
 
@@ -240,7 +254,7 @@ html:is(.dark) {
   }
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 629px) {
   .nav-links {
     display: none;
 

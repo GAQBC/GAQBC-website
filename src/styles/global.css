@@ -114,7 +114,7 @@ b {
   & > .banner-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
     width: 100%;
     & > h1 {
@@ -123,68 +123,11 @@ b {
       color: white !important;
       font-size: min(7vw, 70pt);
     }
-
-    & > .banner-arrow {
-      vertical-align: middle;
-      width: fit-content;
-      height: auto;
-      visibility: hidden;
-
-      & > svg {
-        width: 5vw;
-        height: auto;
-        visibility: visible !important;
-      }
-
-      cursor: pointer;
-    }
   }
 
   @media screen and (max-width: 430px) {
     .banner > .banner-innert > h1 {
       font-size: 10vw;
-    }
-  }
-
-  @media screen and (max-width: 760px) {
-    * {
-      --dots-vert: -19px;
-    }
-  }
-  @media screen and (760px < width < 787px) {
-    * {
-      --dots-vert: calc(-37.037vw + 262.48px);
-    }
-  }
-  @media screen and (min-width: 787px) {
-    * {
-      --dots-vert: -29px;
-    }
-  }
-
-  & > .banner-dots {
-    width: 160px;
-    height: 20px;
-    transform: translateY(var(--dots-vert)) translateX(calc(50vw - 90px));
-    border-radius: 10px 10px 0px 0px;
-    background-color: white;
-    padding-bottom: 6px;
-
-    & > .dot {
-      height: 15px;
-      width: 15px;
-      margin: 3px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-
-      &.dot-active {
-        background-color: #000;
-      }
-    }
-
-    & > .dot:first-of-type {
-      margin-left: 10px;
     }
   }
 }

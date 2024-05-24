@@ -1,30 +1,38 @@
+function hide(a) { 
+    let opacity = Number(window.getComputedStyle(a).getPropertyValue("opacity")); 
+    if (opacity > 0) { 
+        opacity = opacity - 0.1; 
+        a.style.opacity = opacity 
+    }
+}
+
+function show(a) { 
+    let opacity = Number(window.getComputedStyle(a).getPropertyValue("opacity")); 
+    if (opacity < 1) { 
+        opacity = opacity + 0.1; 
+        a.style.opacity = opacity 
+    }
+}
+
+async function hideFull(a) {
+    let id = setInterval(() => hide(a), 200);
+}
+
 function arrow(a) {
     a = Number(a);
     const ele = document.getElementsByClassName("banner-background")?.[0];
     const bgprop = ele.getAttribute("src");
     let number = Number(bgprop.match(/\d/)?.[0]);
     let newNumber;
-    if (number == 6 && a == 1) {
+    if (number == 6) {
         newNumber = 1;
-    } else if (number == 1 && a == -1) {
-        newNumber = 6;
     } else {
-        newNumber = number + a;
+        newNumber = number + 1;
     }
     const invisele = document.getElementById(String("slide" + newNumber));
     ele.setAttribute("src", invisele.getAttribute("src"));
-    const dotsele = document.getElementsByClassName("banner-dots")?.[0];
-    let dotsarray = Array(6).fill("<span class=\"dot\"></span>");
-    dotsarray[newNumber - 1] = "<span class=\"dot dot-active\"></span>";
-    dotsele.innerHTML = dotsarray.join("\n");
 }
 
-function leftarrow() {
-    arrow(-1);
-}
-function rightarrow() {
-    arrow(1);
-}
-
-document.getElementById("left-arrow").addEventListener('click', leftarrow);
-document.getElementById("right-arrow").addEventListener('click', rightarrow);
+setInterval(() => {
+    arrow();
+  }, 3000);

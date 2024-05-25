@@ -17,6 +17,8 @@
 * {
   --iconmove-desktop: 13px;
   --iconmove-mobile: 5px;
+  --navlink-sep: 40px;
+  --navlink-size: 1rem;
 }
 
 body {
@@ -72,7 +74,7 @@ b {
   & a {
     text-align: center;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: var(--navlink-size);
     font-weight: bold;
 
     &:hover,
@@ -176,14 +178,14 @@ html:is(.dark) {
 }
 
 /* screen sizes */
-@media screen and (min-width: 630px) {
+@media screen and (min-width: 767px) {
   .nav-links {
     display: inline-block;
     width: auto;
 
     & > a {
       display: inline-block;
-      padding: 15px 10px 15px 20px;
+      padding: 15px var(--navlink-sep) 15px 15px;
     }
   }
 
@@ -206,7 +208,7 @@ html:is(.dark) {
   }
 }
 
-@media screen and (max-width: 629px) {
+@media screen and (max-width: 766px) {
   .nav-links {
     display: none;
 
@@ -217,7 +219,7 @@ html:is(.dark) {
 
       & > a {
         padding: 10px;
-        max-width: 40px;
+        max-width: fit-content;
         display: block;
       }
     }

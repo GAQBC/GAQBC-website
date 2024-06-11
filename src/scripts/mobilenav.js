@@ -13,7 +13,7 @@ close.addEventListener("click", function () {
 document.onclick = function(e) {
     if (nav.className.includes("expanded")) {
         let classes = String(e.target.className);
-        console.log("classes");
+        console.log(classes);
         let nodename = String(e.target.nodeName);
         console.log(nodename);
         if (classes) {

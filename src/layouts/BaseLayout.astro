@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
 
 const { pageTitle, main, content } = Astro.props
@@ -18,6 +17,7 @@ const { pageTitle, main, content } = Astro.props
         	<slot />
 		</div>
 		<script>
+			import "../scripts/mobilenav.js";
 		</script>
 	</body>
 </html>

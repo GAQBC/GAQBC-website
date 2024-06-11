@@ -13,9 +13,11 @@ close.addEventListener("click", function () {
 document.onclick = function(e) {
     if (nav.className.includes("expanded")) {
         let classes = String(e.target.className);
+        console.log("classes");
         let nodename = String(e.target.nodeName);
         console.log(nodename);
         if (classes) {
+            console.log("hi")
             if (!classes.includes("mobile-") && !(["BUTTON", "svg", "line", "path"].includes(nodename))) {
                 nav.classList.remove("expanded");
             }

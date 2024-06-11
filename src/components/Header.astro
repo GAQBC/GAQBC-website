@@ -1,15 +1,16 @@
 ---
-import Hamburger from './Hamburger.astro';
-import ThemeIcon from './ThemeIcon.astro';
+import logo from '/src/assets/logo.png';
 import Navigation from './Navigation.astro';
 ---
-<header>
-  <div class="logo">
-    <h1><a href="/" class="nolink">GAQBC</a></h1>
-  </div>
-  <div class="icons">
-    <Hamburger />
-    <ThemeIcon />
-  </div> 
-  <Navigation />
-</header>
+<div class="headerbg">
+  <header class="header">
+    <div class="toprow">
+      <button class="hamburger">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
+      <a href="/"><img src={logo.src}></img></a>
+      <h1><a href="/" class="nolink">GAQBC</a></h1>
+    </div>
+    <Navigation />
+  </header>
+</div>

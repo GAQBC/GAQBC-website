@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 import Header from '../components/Header.astro';
-import Banner from '../components/Banner.astro';
 
 const { pageTitle, main, content } = Astro.props
 ---
@@ -15,11 +14,10 @@ const { pageTitle, main, content } = Astro.props
 	</head>
 	<body>
 		<Header />
-        <Banner main={main} />
-        <slot />
+		<div class="content">
+        	<slot />
+		</div>
 		<script>
-			import "../scripts/menu.js";
-            import "../scripts/banner.js";
 		</script>
 	</body>
 </html>

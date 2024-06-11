@@ -12,13 +12,14 @@ const { frontmatter } = Astro.props;
 	</head>
 	<body>
 		<Header />
-        <p>Published on: {frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")}</p>
-        <p>Written by: {frontmatter.author}</p>
-        <hr>
-        <slot />
+		<div class="content">
+			<p>Published on: {frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")}</p>
+			<p>Written by: {frontmatter.author}</p>
+			<hr>
+			<slot />
+		</div>
 		<script>
-			import "../scripts/menu.js";
-            import "../scripts/banner.js";
+			import "../scripts/nav.js"
 		</script>
 	</body>
 </html>

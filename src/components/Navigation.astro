@@ -1,11 +1,17 @@
 ---
 ---
-<div class="header">
-  <div class="nav-links">
-    <a href="/">Home</a>
-    <a href="/news/">News</a>
-    <a href="/work/">Work for GAQBC</a>
-    <a href="/tournaments/">Upcoming tournaments</a>
-    <a href="/tournaments/">Rules</a>
-  </div>
+<div class="navigation">
+    <div class="nav-ele"><a class="nav-link" href="/">Home</a></div>
+    <div class="nav-ele"><a class="nav-link" href="/news/">News</a></div>
+    <div class="nav-ele"><a class="nav-link" href="/work/">Work for GAQBC</a></div>
+    <div class="nav-ele"><a class="nav-link" href="/tournaments/">Upcoming tournaments</a></div>
+    <div class="nav-ele"><a class="nav-link" href="/tournaments/">Rules</a></div>
+    <script>
+      let navlinks = document.getElementsByClassName("nav-link");
+      for (let navlink of navlinks) {
+        if (navlink.getAttribute("href") === window.location.pathname) {
+          navlink.classList.add("active")
+        }
+      }
+    </script>
 </div>

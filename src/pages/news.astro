@@ -1,12 +1,10 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Entry from '../components/Entry.astro';
-const pageTitle = "News";
 const allPosts = await Astro.glob('../pages/posts/*.md');
-const bannerMain = "News";
 ---
 
-<BaseLayout pageTitle={pageTitle}, main={bannerMain}>
+<BaseLayout>
     {allPosts.sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map((post) => <Entry url={post.url}, title={post.frontmatter.title}, date={post.frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")}, content={post.frontmatter.description} />)}
     <script>
         var entries = document.getElementsByClassName('entry');

@@ -13,6 +13,14 @@ body {
   margin: 15px;
 }
 
+.center {
+  text-align: center;
+}
+
+.right { 
+  text-align: right;
+}
+
 /** header **/
 
 .header {
@@ -157,4 +165,16 @@ body {
   .mobile-navigation {
     display: none; 
   }
+}
+
+/** 404 **/
+
+.fof {
+  font-size: 140px;
+  color: red;
+  font-weight: bolder;
+}
+
+.foftext {
+  font-size: 30px;
 }

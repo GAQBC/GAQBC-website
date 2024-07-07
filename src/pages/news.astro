@@ -1,16 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Entry from '../components/Entry.astro';
-const allPosts = await Astro.glob('../pages/posts/*.md');
+const allPosts = await Astro.glob('../assets/posts/*.md');
 ---
 
 <BaseLayout>
-    {allPosts.sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map((post) => <Entry url={post.url}, title={post.frontmatter.title}, date={post.frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")}, content={post.frontmatter.description} />)}
+    {allPosts.sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map((post) => <Entry title={post.frontmatter.title}, date={new Date(post.frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}, author={post.frontmatter.author}, content={post.compiledContent()} />)}
     <script>
         var entries = document.getElementsByClassName('entry');
-        console.log(entries);
         for (var i = 0; i < entries.length - 1; i++) {
             entries[i].parentNode.insertBefore(document.createElement('hr'), entries[i].nextSibling)
+        }
+        for (let entry of entries) {
+            let target;
+            let content;
+            for (let child of entry.children) {
+                if (child.id === "entrymain") {
+                    target = child;
+                }
+            }
+            for (let child of target.children) {
+                if (child.id === "rawcontent") {
+                    content = child.textContent;
+                }
+            }
+            target.innerHTML += `<div class="entrycontent">${content}</div>`
         }
     </script>
 </BaseLayout>

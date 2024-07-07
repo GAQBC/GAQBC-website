@@ -1,9 +1,14 @@
 ---
-const { url, title, date, content } = Astro.props
+const {title, date, author, content} = Astro.props
 ---
 
-<div class="entry">
-    <h1 class="entrytitle"><a href={url}>{title}</a></h1>
-    <p class="entrydate">{date}</p>
-    <p class="entrycontent">{content}</p>
+<div class="entry" id={title}>
+    <div class="entryinfo">
+        <p class="date">{date}</p>
+        <p class="author">{author}</p>
+    </div>
+    <div class="entrymain" id="entrymain">
+        <h1 class="title">{title}</h1>
+        <p class="invisible" id="rawcontent">{content}</p>
+    </div>
 </div>

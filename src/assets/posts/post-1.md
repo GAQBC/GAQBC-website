@@ -1,7 +1,7 @@
 ---
 title: 'RTMS wins MSNCT'
 pubDate: 2024-05-21
-author: 'Kaiden Lee'
+author: 'Kaiden'
 ---
 
 Congrats to River Trail Middle School from Johns Creek, Georgia for winning the 2024 NAQT Middle School National Championship Tournament!

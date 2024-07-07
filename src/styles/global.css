@@ -79,7 +79,7 @@ body {
 /** page titles **/
 
 .pagetitle {
-  margin-left: calc(20% + 2px);
+  margin-left: calc(20% - 155px);
   font-size: 60px;
 }
 
@@ -98,7 +98,6 @@ hr {
     vertical-align: top;
     display: inline-block;
     width: 120px;
-    margin-right: calc(20% - 120px);
     & > .author {
       font-weight: 500;
     }
@@ -113,7 +112,7 @@ hr {
     }
     vertical-align: top;
     display: inline-block;
-    max-width: 60%;
+    max-width: min(calc(60% + 150px), calc(100% - 160px));
   }
 }
 
@@ -228,8 +227,12 @@ hr {
     display: none; 
   }
   hr {
-    max-width: 60%;
-    margin-left: 20%;
+    max-width: calc(60% + 310px);
+    margin-left: calc(20% - 155px);
+  }
+  .entryinfo {
+    margin-left: calc(20% - 155px);
+    margin-right: calc(30px);
   }
 }
 

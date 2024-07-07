@@ -5,11 +5,13 @@ const allPosts = await Astro.glob('../assets/posts/*.md');
 ---
 
 <BaseLayout>
+    <h1 class="pagetitle">News</h1>
     {allPosts.sort((a,b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)).map((post) => <Entry title={post.frontmatter.title}, date={new Date(post.frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}, author={post.frontmatter.author}, content={post.compiledContent()} />)}
     <script>
         var entries = document.getElementsByClassName('entry');
-        for (var i = 0; i < entries.length - 1; i++) {
-            entries[i].parentNode.insertBefore(document.createElement('hr'), entries[i].nextSibling)
+        for (var i = 0; i < entries.length; i++) {
+            console.log(entries[i]);
+            entries[i].parentNode.insertBefore(document.createElement('hr'), entries[i]);
         }
         for (let entry of entries) {
             let target;

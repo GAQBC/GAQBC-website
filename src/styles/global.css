@@ -76,6 +76,13 @@ body {
   color: black;
 }
 
+/** page titles **/
+
+.pagetitle {
+  margin-left: calc(20% + 2px);
+  font-size: 60px;
+}
+
 /** news posts **/
 
 hr {
@@ -176,11 +183,17 @@ hr {
     display: block !important;
     & > .entryinfo {
       display: block !important;
+      & > .author {
+        margin-bottom: 20px !important;
+      }
     }
     & > .entrymain {
       display: block !important;
       max-width: 100% !important;
     }
+  }
+  .pagetitle {
+    margin-left: 0px !important;
   }
 }
 

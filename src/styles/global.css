@@ -227,6 +227,10 @@ hr {
   .mobile-navigation {
     display: none; 
   }
+  hr {
+    max-width: 60%;
+    margin-left: 20%;
+  }
 }
 
 /** 404 **/

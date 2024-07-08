@@ -10,7 +10,6 @@ const allPosts = await Astro.glob('../assets/posts/*.md');
     <script>
         var entries = document.getElementsByClassName('entry');
         for (var i = 0; i < entries.length; i++) {
-            console.log(entries[i]);
             entries[i].parentNode.insertBefore(document.createElement('hr'), entries[i]);
         }
         for (let entry of entries) {

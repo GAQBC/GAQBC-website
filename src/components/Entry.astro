@@ -4,11 +4,11 @@ const {title, date, author, content} = Astro.props
 
 <div class="entry" id={title}>
     <div class="entryinfo">
-        <p class="date">{date}</p>
-        <p class="author">{author}</p>
+        <p class="entrydate">{date}</p>
+        <p class="entryauthor">{author}</p>
     </div>
     <div class="entrymain" id="entrymain">
-        <h1 class="title">{title}</h1>
+        <h1 class="entrytitle">{title}</h1>
         <p class="invisible" id="rawcontent">{content}</p>
     </div>
 </div>

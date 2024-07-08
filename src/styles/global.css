@@ -1,5 +1,6 @@
 * {
   --default-font: system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+
 }
 
 body {
@@ -9,12 +10,13 @@ body {
 
 /** content **/
 
-.invisible {
-  display: none !important;
+.content {
+  max-width: calc(60% + 310px);
+  margin-left: calc(20% - 155px);
 }
 
-.content {
-  margin: 15px;
+.invisible {
+  display: none !important;
 }
 
 .center {
@@ -23,6 +25,11 @@ body {
 
 .right { 
   text-align: right;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 /** header **/
@@ -79,8 +86,53 @@ body {
 /** page titles **/
 
 .pagetitle {
-  margin-left: calc(20% - 155px);
   font-size: 60px;
+}
+
+/** people **/
+
+.people { 
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.person {
+  height: 160px;
+  flex-basis: 200px;
+  flex-grow: 1;
+  vertical-align: top;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border: solid #ddd;
+  border-radius: 10px;
+  margin: 5px;
+  & > .pfp {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  & > .personinfo {
+    display: inline-block;
+    & > .realname {
+      font-size: 25px;
+      margin-top: 0px;
+    }
+    & > .extrainfo {
+      & > p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+        &.username {
+          font-family: monospace;
+        }
+        &.position {
+          font-style: italic;
+        }
+      }
+    }
+  }
 }
 
 /** news posts **/
@@ -98,10 +150,10 @@ hr {
     vertical-align: top;
     display: inline-block;
     width: 120px;
-    & > .author {
+    & > .entryauthor {
       font-weight: 500;
     }
-    & > .date {
+    & > .entrydate {
       margin-top: 8px;
       color: #777;
     }
@@ -144,7 +196,7 @@ hr {
         margin-right: 10px;
       }
       & > .close {
-        display: inline-block !important;
+        display: block !important;
         width: fit-content;
         padding: 0;
         aspect-ratio: 1 / 1;
@@ -182,7 +234,7 @@ hr {
     display: block !important;
     & > .entryinfo {
       display: block !important;
-      & > .author {
+      & > .entryauthor {
         margin-bottom: 20px !important;
       }
     }
@@ -191,8 +243,14 @@ hr {
       max-width: 100% !important;
     }
   }
-  .pagetitle {
-    margin-left: 0px !important;
+  .people { 
+    margin-left: -5px;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .content {
+    margin: 15px;
   }
 }
 
@@ -203,10 +261,9 @@ hr {
     display: none !important;
   }
   .navigation {
-    display: inline-block;
+    display: block;
     position: relative;
     float: right;
-    vertical-align: middle;
     transform: translateY(27px);
     & > .nav-ele {
       display: inline;
@@ -225,14 +282,6 @@ hr {
   }
   .mobile-navigation {
     display: none; 
-  }
-  hr {
-    max-width: calc(60% + 310px);
-    margin-left: calc(20% - 155px);
-  }
-  .entryinfo {
-    margin-left: calc(20% - 155px);
-    margin-right: calc(30px);
   }
 }
 

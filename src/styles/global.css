@@ -6,6 +6,7 @@
 body {
   font-family: var(--default-font);
   margin: 0px;
+  font-size: 17px;
 }
 
 /** content **/
@@ -83,17 +84,55 @@ li {
   color: black;
 }
 
-/** page titles **/
+/** social **/
+
+.social {
+  & a {
+    font-weight: bold;
+    text-decoration: none;
+  }
+  display: flex;
+  margin: -15px;
+  .socialblock {
+    margin: 15px;
+    display: inline-flex;
+    flex-grow: 1;
+    align-items: center;
+    background-color: #f6f6f6;
+    border: solid #ddd;
+    border-radius: 25px;
+    padding: 25px;
+    & > .socialicon {
+      display: inline-block;
+      width: 20%;
+      height: auto;
+      margin-right: 40px;
+    }
+    & > .socialinfo {
+      max-width: 60%;
+      display: inline-block;
+      text-wrap: balance;
+    }
+  }
+}
+
+/** titles **/
 
 .pagetitle {
   font-size: 60px;
 }
 
-/** people **/
+.sitetitle {
+  font-size: max(5vw, 50px);
+  text-align: center;
+}
+
+/** team/people **/
 
 .people { 
   display: flex;
   flex-flow: row wrap;
+  margin-bottom: 35px;
 }
 
 .person {
@@ -105,6 +144,7 @@ li {
   display: flex;
   align-items: center;
   border: solid #ddd;
+  background-color: #f6f6f6;
   border-radius: 10px;
   margin: 5px;
   & > .pfp {
@@ -133,6 +173,11 @@ li {
       }
     }
   }
+}
+
+/** tournaments **/
+.tournament {
+  margin-bottom: 25px;
 }
 
 /** news posts **/
@@ -246,6 +291,9 @@ hr {
   .people { 
     margin-left: -5px;
   }
+  .social {
+    flex-flow: row wrap;
+  }
 }
 
 @media screen and (max-width: 840px) {
@@ -282,6 +330,9 @@ hr {
   }
   .mobile-navigation {
     display: none; 
+  }
+  .socialblock {
+    max-width: calc(30% + 140px);
   }
 }
 

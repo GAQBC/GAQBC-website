@@ -1,90 +1,17 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import Kaidenpfp from '../assets/images/pfp/Kaiden.png'
-import Joshuapfp from '../assets/images/pfp/Joshua.gif'
-import Helenapfp from '../assets/images/pfp/Helena.png'
-import Dutchpfp from '../assets/images/pfp/Dutch.png'
-import Madhavpfp from '../assets/images/pfp/Madhav.png'
-import Sahaspfp from '../assets/images/pfp/Sahas.png'
-import Vidyutpfp from '../assets/images/pfp/Vidyut.gif'
+import BaseLayout from '../layouts/BaseLayout.astro'
+import PersonCard from '../components/PersonCard.astro'
+import team from '../assets/team.json'
 ---
 
 <BaseLayout>
 <h1 class="pagetitle">GAQBC Team</h1>
 <div class="people">
-    <div class="person">
-        <img class="pfp" src={Joshuapfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Joshua L.</h1>
-            <div class="extrainfo">
-                <p class="username">@arlecchinoismyfather</p>
-                <p class="position">President</p>
-                <p class="school">Johns Creek HS</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Kaidenpfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Kaiden L.</h1>
-            <div class="extrainfo">
-                <p class="username">@pellucid1137</p>
-                <p class="position">Website developer</p>
-                <p class="school">Northview HS</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Helenapfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Helena H.</h1>
-            <div class="extrainfo">
-                <p class="username">@helenaur</p>
-                <p class="school">Chattahoochee HS</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Dutchpfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Dutch C.</h1>
-            <div class="extrainfo">
-                <p class="username">@murderpigeon</p>
-                <p class="school">Midtown HS</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Sahaspfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Sahas G.</h1>
-            <div class="extrainfo">
-                <p class="username">@ex0oo</p>
-                <p class="school">North Gwinnett HS</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Madhavpfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Madhav K.</h1>
-            <div class="extrainfo">
-                <p class="username">@windows_21498</p>
-                <p class="position">Content manager</p>
-                <p class="school">Liberal Arts and Science Academy, Texas</p>
-            </div>
-        </div>
-    </div>
-    <div class="person">
-        <img class="pfp" src={Vidyutpfp.src}></img>
-        <div class="personinfo">
-            <h1 class="realname">Vidyut A.</h1>
-            <div class="extrainfo">
-                <p class="username">@icarpal</p>
-                <p class="school">HS of Math, Science, and Engineering; New York</p>
-            </div>
-        </div>
-    </div>
+    {
+    team.map((person) => (
+        <PersonCard data={person} />
+    ))
+    }
 </div>
 
 <p>Interested in joining? DM <tt>@arlecchinoismyfather</tt> on Discord or email us at <tt>@gaqbc.official@gmail.com</tt>. Google Forms for applications will open soon!</p>

@@ -1,0 +1,15 @@
+---
+const { data } = Astro.props;
+---
+
+<div class="person">
+    <img class="pfp" src={data.pfp}></img>
+    <div class="personinfo">
+        <h1 class="realname">{data.name}</h1>
+        <div class="extrainfo">
+            <p class="username">{data.discord}</p>
+            <p class="position">{data.role}</p>
+            <p class="school">{data.school}</p>
+        </div>
+    </div>
+</div>

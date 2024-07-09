@@ -18,8 +18,18 @@ import Mobilenav from './Mobilenav.astro';
 <Mobilenav />
 
 <style>
+@media screen and (min-width: 767px) {
+  .headerbg > .header > .toprow > .hamburger {
+    display: none !important;
+  }
+}
 .header {
-  margin: 0px 15px;
+  margin: 0px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+
   & > .toprow {
     display: inline-block;
     padding: 10px 0px;
@@ -59,12 +69,11 @@ import Mobilenav from './Mobilenav.astro';
 
 .headerbg {
   width: 100%;
-  background-color: #f9fbfd;
+  background-color: #f4f4f4;
   position: sticky;
   top: 0px;
   left: 0px;
   right: 0px;
-  box-shadow: #aaaaaa 0px 3px 5px -2px;
 }
 
 .nolink {

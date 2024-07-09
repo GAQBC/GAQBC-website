@@ -33,57 +33,6 @@ li {
   margin-bottom: 10px;
 }
 
-/** header **/
-
-.header {
-  margin: 0px 15px;
-  & > .toprow {
-    display: inline-block;
-    padding: 15px 0px;
-    & > .hamburger {
-      vertical-align: middle;
-      display: inline-block !important;
-      width: fit-content;
-      aspect-ratio: 1 / 1;
-      border: solid #ddd;
-      border-radius: 5px;
-      background-color: #f6f6f6;
-      margin-right: 15px;
-      & > svg {
-        vertical-align: middle;
-        height: 20px;
-        width: 20px;
-        color: #666;
-      }
-    }
-    & > a > img { 
-      vertical-align: middle;
-      display: inline-block;
-      height: 30px;
-      width: auto;
-      margin-right: 10px;
-    }
-    & > h1 {
-      vertical-align: middle;
-      display: inline-block;
-      font-size: 18px;
-      & > a {
-        font-weight: bold;
-      }
-    }
-  }
-}
-
-.headerbg {
-  width: 100%;
-  background-color: #f6f6f6;
-}
-
-.nolink {
-  text-decoration: none;
-  color: black;
-}
-
 /** social **/
 
 .social {
@@ -130,77 +79,8 @@ li {
 /** mobile **/
 
 @media screen and (max-width: 766px) {
-  .navigation, .mobile-navigation {
+  .navigation {
     display: none !important;
-  }
-  .mobile-navigation.expanded {
-    z-index: 2;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .2);
-    display: block !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 0px 15px;
-    width: 210px;
-    height: 100vh;
-    background-color: white;
-    border-radius: 0px 15px 15px 0px;
-    & > .mobile-toprow {
-      margin: 23px 0px 20px 0px;
-      & > a > img { 
-        vertical-align: middle;
-        display: inline-block;
-        height: 30px;
-        width: auto;
-        margin-right: 10px;
-      }
-      & > .close {
-        display: block !important;
-        width: fit-content;
-        padding: 0;
-        aspect-ratio: 1 / 1;
-        border: solid #ddd;
-        border-radius: 5px;
-        background-color: #f6f6f6;
-        padding: 5px 5px 1.5px 5px;
-        transform: translateY(-1px);
-        float: right;
-        & > svg {
-          height: 20px;
-          width: 20px;
-          color: #666;
-        }
-      }
-    }
-    & > .mobile-nav-ele {
-      display: block;
-      padding: 20px 0px;
-      & > .mobile-nav-link {
-        color: black;
-        text-decoration: none;
-        font-size: 20px;
-        &.active {
-          font-weight: bold;
-        }
-      }
-      &:hover > .mobile-nav-link {
-        color: #82ae73;
-      }
-    }
-  }
-  .entry {
-    margin-top: 25px;
-    display: block !important;
-    & > .entryinfo {
-      display: block !important;
-      & > .entryauthor {
-        margin-bottom: 20px !important;
-      }
-    }
-    & > .entrymain {
-      display: block !important;
-      max-width: 100% !important;
-    }
   }
   .people { 
     margin-left: -5px;
@@ -238,7 +118,7 @@ li {
         }
       }
       &:hover > .nav-link {
-        color: #82ae73;
+        color: #0077ff;
       }
     }
   }
@@ -248,16 +128,4 @@ li {
   .socialblock {
     max-width: calc(30% + 140px);
   }
-}
-
-/** 404 **/
-
-.fof {
-  font-size: 140px;
-  color: red;
-  font-weight: bolder;
-}
-
-.foftext {
-  font-size: 30px;
 }

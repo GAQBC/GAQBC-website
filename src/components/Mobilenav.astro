@@ -21,3 +21,84 @@ import logo from '/src/assets/images/logo.png'
       }
     </script>
 </div>
+
+<style>
+.mobile-navigation {
+    display: block;
+    box-shadow: none;
+    transform: translateX(-100%);
+}
+.mobile-navigation.expanded {
+  display: block !important;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .2);
+  transform: none;
+}
+.mobile-navigation {
+  transition: transform .4s ease;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 0px 15px;
+  width: 210px;
+  height: 100vh;
+  background-color: white;
+  border-radius: 0px 15px 15px 0px;
+  & > .mobile-toprow {
+    margin: 23px 0px 20px 0px;
+    & > a > img { 
+      vertical-align: middle;
+      display: inline-block;
+      height: 30px;
+      width: auto;
+      margin-right: 10px;
+    }
+    & > .close {
+      display: block !important;
+      width: fit-content;
+      padding: 0;
+      aspect-ratio: 1 / 1;
+      border: solid #ddd;
+      border-radius: 5px;
+      background-color: #f6f6f6;
+      padding: 5px 5px 1.5px 5px;
+      transform: translateY(-1px);
+      float: right;
+      & > svg {
+        height: 20px;
+        width: 20px;
+        color: #666;
+      }
+    }
+  }
+  & > .mobile-nav-ele {
+    display: block;
+    padding: 20px 0px;
+    & > .mobile-nav-link {
+      color: black;
+      text-decoration: none;
+      font-size: 20px;
+      &.active {
+        font-weight: bold;
+      }
+    }
+    &:hover > .mobile-nav-link {
+      color: #0077ff;
+    }
+  }
+}
+.entry {
+  margin-top: 25px;
+  display: block !important;
+  & > .entryinfo {
+    display: block !important;
+    & > .entryauthor {
+      margin-bottom: 20px !important;
+    }
+  }
+  & > .entrymain {
+    display: block !important;
+    max-width: 100% !important;
+  }
+}
+</style>

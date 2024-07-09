@@ -10,14 +10,13 @@ const { pageTitle, main, content } = Astro.props
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{pageTitle}</title>
+
+        <script src="/scripts/mobilenav.js" async defer is:inline />
 	</head>
 	<body>
 		<Header />
 		<div class="content">
         	<slot />
 		</div>
-		<script>
-			import "../scripts/mobilenav.js";
-		</script>
 	</body>
 </html>

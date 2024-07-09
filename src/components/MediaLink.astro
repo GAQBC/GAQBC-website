@@ -1,0 +1,20 @@
+---
+const { type = "email", value } = Astro.props
+
+var href;
+switch (type) {
+    case "email":
+        href = `mailto:${value}`
+        break;
+
+    case "discord":
+        href = `` // TODO: add this
+        break;
+
+    default:
+        href = value
+        break;
+}
+---
+
+<a class="media-link" href={href}><tt>{value}<tt/></a>

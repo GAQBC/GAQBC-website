@@ -1,20 +1,12 @@
 * {
-  --default-font: system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --default-font: system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --accent: #0077ff;
+    --gray-light: 235, 239, 246;
+    --gray-gradient: rgba(var(--gray-light), 40%), #ffffff;
 
-}
-
-body {
-  font-family: var(--default-font);
-  margin: 0px;
-  font-size: 17px;
 }
 
 /** content **/
-
-.content {
-  max-width: calc(60% + 310px);
-  margin-left: calc(20% - 155px);
-}
 
 .invisible {
   display: none !important;
@@ -31,6 +23,14 @@ body {
 li {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 68, 255);
+}
+a:hover {
+    text-decoration: underline;
 }
 
 /** social **/
@@ -118,7 +118,7 @@ li {
         }
       }
       &:hover > .nav-link {
-        color: #0077ff;
+        color: var(--accent);
       }
     }
   }

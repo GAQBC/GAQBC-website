@@ -10,6 +10,10 @@ switch (type) {
     case "discord":
         href = `` // TODO: add this
         break;
+    
+    case "gh":
+        href = `https://github.com/${value}`
+        break;
 
     default:
         href = value
@@ -18,3 +22,6 @@ switch (type) {
 ---
 
 <a class="media-link" href={href}><tt>{value}<tt/></a>
+
+<style>
+</style>

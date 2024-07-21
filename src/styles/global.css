@@ -91,6 +91,20 @@ a:hover {
   .content {
     margin: 15px;
   }
+  .entry {
+    margin-top: 25px;
+    display: block !important;
+    & > .entryinfo {
+      display: block !important;
+      & > .entryauthor {
+        margin-bottom: 20px !important;
+      }
+    }
+    & > .entrymain {
+      display: block !important;
+      max-width: 100% !important;
+    }
+  }
 }
 
 /** desktop **/
@@ -98,5 +112,9 @@ a:hover {
 @media screen and (min-width: 767px) {
   .socialblock {
     max-width: calc(30% + 140px);
+  }
+  .content {
+    max-width: 80%;
+    margin: 0 10% 0 10%;
   }
 }

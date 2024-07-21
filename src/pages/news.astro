@@ -9,7 +9,7 @@ const allPosts = await Astro.glob('../assets/posts/*.md');
     {allPosts.sort((a,b) => new Date(b.frontmatter.pubDate).getTime() - new Date(a.frontmatter.pubDate).getTime()).map((post) => <Entry title={post.frontmatter.title}, date={new Date(post.frontmatter.pubDate.toString().slice(0,10).replaceAll("-", "/")).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'})}, author={post.frontmatter.author}, content={post.compiledContent()} />)}
     <script>
         var entries = document.getElementsByClassName('entry');
-        for (var i = 0; i < entries.length; i++) {
+        for (var i = 1; i < entries.length; i++) {
             entries[i].parentNode.insertBefore(document.createElement('hr'), entries[i]);
         }
         for (let entry of entries) {
@@ -31,7 +31,7 @@ const allPosts = await Astro.glob('../assets/posts/*.md');
 </BaseLayout>
 
 <style>
-    hr {
+hr {
   border: none;
   height: 1.5px;
   background-color: #ddd;

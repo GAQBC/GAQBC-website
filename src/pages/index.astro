@@ -1,95 +1,68 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import MediaLink from '../components/MediaLink.astro';
 import slide1 from '../assets/images/slide1.png';
-import slide2 from '../assets/images/slide2.png';
-import slide3 from '../assets/images/slide3.png';
-import slide4 from '../assets/images/slide4.png';
-import slide5 from '../assets/images/slide5.png';
-import slide6 from '../assets/images/slide6.png';
 import discordicon from '../assets/images/discord.png';
 import contacticon from '../assets/images/contact.svg';
 ---
 <BaseLayout>
-    <main>
-        <h1 class="sitetitle">Georgia Quizbowl Community</h1>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">The largest player-run quizbowl community</h2>
-                <p class="homeinfo">
-                    GAQBC is the largest quizbowl community made by players, for players. 
-                    Whether you're a seasoned enthusiast or the newest of novices, GAQBC offers an embracing and engaging community 
-                    and environment for all things quizbowl-related. GAQBC is inclusive to everyone—even not-Georgians.
-                </p>
-            </div>
-        </div>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">Exclusive tournaments and sets</h2>
-                <p class="homeinfo">
-                    GAQBC offers tournaments and mirrors with excellent value; with our tournaments being $70 or less per team 
-                    and having seven games guaranteed, you'll pay at most 50 cents per tossup-bonus cycle.
-                    We're also working on writing our own sets, starting with our Peach Novice sets.
-                </p>
-            </div>
-        </div>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">Hone your skills</h2>
-                <p class="homeinfo">
-                    Georgia has some of the best quizbowl talent in the country; teams and individuals in the state consistently place 
-                    very high and even win prestigious national competitions including NAQT's MSNCT and HSNCT and IAC's subject bees. 
-                    Talk and practice with our players or ask them for advice to improve your own capabilities.
-                </p>
-            </div>
-        </div>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">Events!</h2>
-                <p class="homeinfo">
-                    GAQBC hosts a plethora of live events, from scrimmages, streams, and game nights! 
-                    There's even a chance of winning Discord Nitro and other prizes.
-                </p>
-            </div>
-        </div>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">Join our Discord</h2>
-                <p class="homeinfo">
-                    Immerse yourself in a thriving community of passionate quizbowlers by joining the 
-                    <a href="https://discord.gg/tSbQvYp4ZE">GAQBC Discord server</a>. Chat, play scrimmages, get to know others, and more!
-                </p>
-                <p class="homeinfo">
-                    Like most quizbowl Discord servers, we are non-anonymous; please change your nickname to your real name and affiliation!
-                    Additionally, a moderator may need to verify you before you are able to join.
-                </p>
-            </div>
-        </div>
-        <div class="homeblock">
-            <img class="homeimg"></img>
-            <div class="homecontent">
-                <h2 class="hometitle">Contact us</h2>
-                <p class="homeinfo">
-                    Questions? Concerns? Suggestions? Email us at <MediaLink type="email" value="gaqbc.official@gmail.com" />!
-                </p>
-            </div>
-        </div>
-    </main>
+	<h1 class="sitetitle">Georgia Quizbowl Community</h1>
+	<div class="homeblock">
+		<img class="homeimg" src={slide1.src}></img>
+		<div class="homecontent">
+			<h1 class="hometitle">The largest player-run quizbowl community</h1>
+			<p class="homeinfo">
+				GAQBC is the largest quizbowl community made by players, for players. 
+				Whether you're a seasoned enthusiast or the newest of novices, GAQBC offers an embracing and engaging community 
+				and environment for all things quizbowl-related. GAQBC is open to everyone—even not-Georgians.
+			</p>
+		</div>
+	</div>
+	<div class="homeblock">
+		<img class="homeimg" src={slide1.src}></img>
+		<div class="homecontent">
+			<h1 class="hometitle">Exclusive tournaments and sets</h1>
+			<p class="homeinfo">
+				GAQBC offers tournaments and mirrors with excellent value; with our tournaments being $70 or less per team 
+				and having seven games guaranteed, you'll pay at most 50 cents per tossup-bonus cycle.
+				We're also working on writing our own sets, starting with our Peach Novice sets.
+			</p>
+		</div>
+	</div>
+	<div class="homeblock">
+		<img class="homeimg" src={slide1.src}></img>
+		<div class="homecontent">
+			<h1 class="hometitle">Hone your skills</h1>
+			<p class="homeinfo">
+				Georgia has some of the best quizbowl talent in the country; teams and individuals in the state consistently place 
+				very high and even win prestigious national competitions including NAQT's MSNCT and HSNCT and IAC's subject bees. 
+				Talk and practice with our players or ask them for advice to improve your own capabilities.
+			</p>
+		</div>
+	</div>
+	<div class="homeblock">
+		<img class="homeimg" src={slide1.src}></img>
+		<div class="homecontent">
+			<h1 class="hometitle">Events!</h1>
+			<p class="homeinfo">
+				GAQBC hosts a plethora of live events, from scrimmages, streams, and game nights! 
+				There's even a chance of winning Discord Nitro and other prizes.
+			</p>
+		</div>
+	</div>
+	<div class="socials">
+		<div class="socialblock">
+			<img class="socialicon" src={discordicon.src}></img>
+			<div class="socialinfo">
+				<h1>Discord</h1>
+				<p>Immerse yourself in a thriving community of passionate quizbowlers by joining the GAQBC Discord server. Chat, play scrimmages, get to know others, and more!</p>
+			</div>
+		</div>
+		<div class="socialblock">
+			<img class="socialicon" src={contacticon.src}></img>
+			<div class="socialinfo">
+				<h1>Contact us</h1>
+				<p>Questions? Concerns? Suggestions? Email us at <tt>gaqbc.official@gmail.com</tt>!</p>
+			</div>
+		</div>
+	</div>
 </BaseLayout>
-<style>
-    main {
-        padding: 0;
-    }
-    .sitetitle {
-        margin: 10px;
-        font-size: 54px;
-    }
-    .homeblock {
-        margin: 0;
-    }
-</style>

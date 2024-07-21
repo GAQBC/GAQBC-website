@@ -37,7 +37,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </div>
 <script>
     var tournies = document.getElementsByClassName('tournament');
-    for (var i = 0; i < tournies.length; i++) {
+    for (var i = 1; i < tournies.length; i++) {
         tournies[i].parentNode.insertBefore(document.createElement('hr'), tournies[i]);
     }
 </script>

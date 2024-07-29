@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 
 const { pageTitle, main, content } = Astro.props
 ---
@@ -22,7 +21,6 @@ const { pageTitle, main, content } = Astro.props
             </div>
         </div>
 	</body>
-  <Footer />
 </html>
 
 <style>
@@ -35,5 +33,6 @@ body {
 .content-wrapper {
     width: 100%;
     margin: 0px;
+    padding-bottom: 50px;
 }
 </style>

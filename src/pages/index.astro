@@ -1,11 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import slide1 from '../assets/images/slide1.png';
+import skills from '../assets/images/skills.png';
+import events from '../assets/images/events.png';
+import sets from '../assets/images/sets.png';
 import discordicon from '../assets/images/discord.png';
 import contacticon from '../assets/images/contact.svg';
 ---
 <BaseLayout>
-	<h1 class="sitetitle">Georgia Quizbowl Community</h1>
+	<h1 class="pagetitle sitetitle">Georgia Quizbowl Community</h1>
 	<div class="homeblock">
 		<img class="homeimg" src={slide1.src}></img>
 		<div class="homecontent">
@@ -18,7 +21,7 @@ import contacticon from '../assets/images/contact.svg';
 		</div>
 	</div>
 	<div class="homeblock">
-		<img class="homeimg" src={slide1.src}></img>
+		<img class="homeimg" src={sets.src}></img>
 		<div class="homecontent">
 			<h1 class="hometitle">Exclusive tournaments and sets</h1>
 			<p class="homeinfo">
@@ -29,7 +32,7 @@ import contacticon from '../assets/images/contact.svg';
 		</div>
 	</div>
 	<div class="homeblock">
-		<img class="homeimg" src={slide1.src}></img>
+		<img class="homeimg" src={skills.src}></img>
 		<div class="homecontent">
 			<h1 class="hometitle">Hone your skills</h1>
 			<p class="homeinfo">
@@ -40,7 +43,7 @@ import contacticon from '../assets/images/contact.svg';
 		</div>
 	</div>
 	<div class="homeblock">
-		<img class="homeimg" src={slide1.src}></img>
+		<img class="homeimg" src={events.src}></img>
 		<div class="homecontent">
 			<h1 class="hometitle">Events!</h1>
 			<p class="homeinfo">
@@ -51,18 +54,80 @@ import contacticon from '../assets/images/contact.svg';
 	</div>
 	<div class="socials">
 		<div class="socialblock">
-			<img class="socialicon" src={discordicon.src}></img>
-			<div class="socialinfo">
+			<div class="socialtitle">
 				<h1>Discord</h1>
-				<p>Immerse yourself in a thriving community of passionate quizbowlers by joining the GAQBC Discord server. Chat, play scrimmages, get to know others, and more!</p>
+				<img class="socialicon" src={discordicon.src}></img>
 			</div>
+			<p>Immerse yourself in a thriving community of passionate quizbowlers by joining the GAQBC Discord server. Chat, play scrimmages, get to know others, and more!</p>
 		</div>
 		<div class="socialblock">
-			<img class="socialicon" src={contacticon.src}></img>
-			<div class="socialinfo">
+			<div class="socialtitle">
 				<h1>Contact us</h1>
-				<p>Questions? Concerns? Suggestions? Email us at <tt>gaqbc.official@gmail.com</tt>!</p>
+				<img class="socialicon" src={contacticon.src}></img>
 			</div>
+			<p>Questions? Concerns? Suggestions? Email us at <tt>gaqbc.official@gmail.com</tt>!</p>
 		</div>
 	</div>
+
+	<style>
+		.homeblock {
+			align-items: center;
+			display: flex;
+			margin-bottom: 50px;
+			& > .homecontent {
+				display: inline-flex;
+				flex-direction: column;
+				& > .homeinfo {
+					font-size: 20px;
+				}
+			}
+			& > .homeimg {
+				display: inline-flex;
+				width: 27vw;
+				aspect-ratio: 1;
+				object-fit: cover;
+				border-radius: 20px;
+				margin-right: 60px;
+			}
+			&:nth-child(even) {
+				flex-direction: row-reverse;
+				& > .homeimg {
+					margin-left: 50px;
+					margin-right: 0px;
+				}
+			}
+		}
+		
+
+		.socials {
+			display: flex;
+			justify-content: space-between;
+			& > .socialblock {
+				display: inline-flex;
+				flex-direction: column;
+				& > p {
+					font-size: 20px;
+				}
+				& > .socialtitle {
+					display: flex;
+					align-items: center;
+					& > h1 {
+						display: inline-flex;
+						margin-right: 20px;
+					}
+					& > .socialicon {
+						display: inline-flex;
+						height: 40px;
+						width: auto;
+					}
+				}
+				&:nth-child(odd) {
+					margin-right: 25px;
+				}
+				&:nth-child(even) {
+					margin-left: 25px;
+				}
+			}
+		}
+	</style>
 </BaseLayout>

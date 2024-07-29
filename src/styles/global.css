@@ -96,9 +96,6 @@ a:hover {
       max-width: 100% !important;
     }
   }
-  .sitetitle {
-    margin-bottom: 50px;
-  }
 }
 
 /** desktop **/
@@ -114,7 +111,5 @@ a:hover {
 }
 
 @media screen and (min-width: 841px) {
-  .sitetitle {
-    margin-bottom: 100px;
-  } 
+
 }

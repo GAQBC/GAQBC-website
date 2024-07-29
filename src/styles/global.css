@@ -4,6 +4,10 @@
     --gray-light: 235, 239, 246;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /** content **/
 
 .invisible {

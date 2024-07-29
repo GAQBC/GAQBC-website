@@ -16,7 +16,7 @@ import contacticon from '../assets/images/contact.svg';
 			<p class="homeinfo">
 				GAQBC is the largest quizbowl community made by players, for players. 
 				Whether you're a seasoned enthusiast or the newest of novices, GAQBC offers an embracing and engaging community 
-				and environment for all things quizbowl-related. GAQBC is open to everyone—even not-Georgians.
+				and environment for all things quizbowl-related. GAQBC is open to everyone—even non-Georgians.
 			</p>
 		</div>
 	</div>
@@ -52,8 +52,9 @@ import contacticon from '../assets/images/contact.svg';
 			</p>
 		</div>
 	</div>
+	<hr>
 	<div class="socials">
-		<div class="socialblock">
+		<div class="socialblock" id="discord">
 			<div class="socialtitle">
 				<h1>Discord</h1>
 				<img class="socialicon" src={discordicon.src}></img>
@@ -71,46 +72,106 @@ import contacticon from '../assets/images/contact.svg';
 
 	<style>
 		.sitetitle {
-			margin-bottom: 50px;
+				margin-bottom: 50px;
 		}
-		
-		.homeblock {
-			align-items: center;
-			display: flex;
-			margin-bottom: 50px;
-			& > .homecontent {
-				display: inline-flex;
-				flex-direction: column;
-				& > .homeinfo {
-					font-size: 20px;
-				}
-			}
-			& > .homeimg {
-				display: inline-flex;
-				width: 27vw;
-				aspect-ratio: 1;
-				object-fit: cover;
-				border-radius: 20px;
-				margin-right: 60px;
-			}
-			&:nth-child(even) {
-				flex-direction: row-reverse;
-				& > .homeimg {
-					margin-left: 50px;
-					margin-right: 0px;
-				}
-			}
-		}
-		
 
-		.socials {
-			display: flex;
-			justify-content: space-between;
-			& > .socialblock {
-				display: inline-flex;
-				flex-direction: column;
-				& > p {
-					font-size: 20px;
+		hr {
+			border: none;
+			height: 1.5px;
+			background-color: #ddd;
+			margin-top: 60px;
+			margin-bottom: 60px;
+		}
+
+		@media screen and (min-width: 767px) {
+			.homeblock {
+				align-items: center;
+				display: flex;
+				margin-bottom: 50px;
+				& > .homecontent {
+					display: inline-flex;
+					flex-direction: column;
+					& > .homeinfo {
+						font-size: 20px;
+					}
+				}
+				& > .homeimg {
+					display: inline-flex;
+					width: 27vw;
+					aspect-ratio: 1;
+					object-fit: cover;
+					border-radius: 20px;
+					margin-right: 60px;
+				}
+				&:nth-child(even) {
+					flex-direction: row-reverse;
+					& > .homeimg {
+						margin-left: 50px;
+						margin-right: 0px;
+					}
+				}
+			}
+			
+			.socials {
+				display: flex;
+				justify-content: space-between;
+				& > .socialblock {
+					border: solid #ddd;
+					background-color: #f6f6f6;
+					border-radius: 10px;
+					padding: 0px 20px 0px 20px;
+					display: inline-flex;
+					flex-direction: column;
+					&:target {
+						background-color: rgba(255, 255, 0, 0.3);
+					}
+					& > p {
+						font-size: 20px;
+					}
+					& > .socialtitle {
+						display: flex;
+						align-items: center;
+						& > h1 {
+							display: inline-flex;
+							margin-right: 20px;
+						}
+						& > .socialicon {
+							display: inline-flex;
+							height: 40px;
+							width: auto;
+						}
+					}
+					&:nth-child(odd) {
+						margin-right: 25px;
+					}
+					&:nth-child(even) {
+						margin-left: 25px;
+					}
+				}
+			}
+		}
+
+		@media screen and (max-width: 766px) {
+			.homeblock {
+				margin-bottom: 30px;
+				display: flex;
+				flex-direction: column-reverse;
+				& > .homecontent {
+					margin-bottom: 15px;
+				}
+				& > .homeimg {
+					border-radius: 20px;
+				}
+			}
+
+			.socialblock {
+				border: solid #ddd;
+				background-color: #f6f6f6;
+				border-radius: 10px;
+				padding: 0px 20px 0px 20px;
+				margin-top: 30px;
+				&:target {
+						background-color: rgba(255, 255, 0, 0.3);
 				}
 				& > .socialtitle {
 					display: flex;
@@ -124,12 +185,6 @@ import contacticon from '../assets/images/contact.svg';
 						height: 40px;
 						width: auto;
 					}
-				}
-				&:nth-child(odd) {
-					margin-right: 25px;
-				}
-				&:nth-child(even) {
-					margin-left: 25px;
 				}
 			}
 		}

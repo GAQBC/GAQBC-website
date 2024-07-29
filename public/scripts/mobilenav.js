@@ -16,6 +16,8 @@ document.onclick = function(e) {
         let nodename = String(e.target.nodeName);
         if (!classes?.includes("mobile-") && !(["BUTTON", "svg", "line", "path"].includes(nodename))) {
             nav.classList.remove("expanded");
+        } else if (classes.includes("mobile-nav-link")) {
+            nav.classList.remove("expanded");
         }
     }
 }

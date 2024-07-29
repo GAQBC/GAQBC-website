@@ -74,6 +74,21 @@ a:hover {
   font-size: 60px;
 }
 
+/** smol phone **/
+
+@media screen and (max-width: 337px) {
+  .mobile-navigation {
+    height: 105vh !important;
+  }
+  .pagetitle {
+    font-size: 53px !important;
+  }
+  .username {
+    width: 170px;
+    overflow-wrap: break-word;
+  }
+}
+
 /** mobile **/
 
 @media screen and (max-width: 766px) {

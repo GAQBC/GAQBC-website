@@ -1,0 +1,14 @@
+---
+const {title, date, set, eligibility} = Astro.props
+---
+
+<div class="tournament">
+    <h1 class="tourneytitle">{title}</h1>
+    <p class="tourneycontent">
+        <ul>
+            <li><b>Date:</b>{date}</li>
+            <li><b>Set: </b>{set}</li>
+            <li><b>Eligibility: </b>{eligibility}</li>
+        </ul>
+    </p>
+</div>

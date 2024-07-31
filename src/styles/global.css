@@ -31,10 +31,16 @@ a {
     text-decoration: none;
     color: rgb(0, 68, 255);
 }
+
 a:hover {
     text-decoration: underline;
 }
 
+hr {
+  border: none;
+  height: 1.5px;
+  background-color: #ddd;
+}
 
 /** social **/
 

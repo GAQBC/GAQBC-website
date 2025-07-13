@@ -1,38 +1,36 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
+import '/src/styles/global.css';
+import { SEO } from "astro-seo";
+import { Icon } from "astro-icon/components";
 
-const { pageTitle, main, content } = Astro.props
+import Navbar from "/src/components/navbar.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const { title } = Astro.props;
+
+const realTitle = title
+  ? title + " | " + "GAQBC"
+  : "Georgia Quizbowl Community";
 ---
 
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<title>{pageTitle}</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.png" />
+    <meta content="gaqbc description" property="og:description" />
 
-        <script src="/scripts/mobilenav.js" async defer is:inline />
-	</head>
-	<body>
-		<Header />
-        <div class="content-wrapper">
-            <div class="content">
-                <slot />
-            </div>
-        </div>
-	</body>
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={realTitle}
+      description="Georgia Quizbowl Community"
+      canonical={canonicalURL}
+    />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+  </body>
 </html>
-
-<style>
-body {
-  font-family: var(--default-font);
-  margin: 0px;
-  font-size: 17px;
-}
-
-.content-wrapper {
-    width: 100%;
-    margin: 0px;
-    padding-bottom: 50px;
-}
-</style>

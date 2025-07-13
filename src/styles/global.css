@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 * {
     --default-font: system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
     --accent: #0077ff;

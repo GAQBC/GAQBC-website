@@ -10,6 +10,8 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 
+import { useEffect, useState } from "react";
+
 const middleMenuItems = [
   {
     title: "About",
@@ -91,25 +93,55 @@ const middleMenuItems = [
 ];
 
 export default function NavMiddle() {
+  const [pathname, setPathname] = useState<string>("");
+
+  useEffect(() => {
+    const updatePath = () => setPathname(window.location.pathname);
+    updatePath(); // Set on mount
+
+    // Listen to Astro client-side navigation (if using any)
+    window.addEventListener("popstate", updatePath);
+    window.addEventListener("pushstate", updatePath); // For SPA-like behavior
+
+    return () => {
+      window.removeEventListener("popstate", updatePath);
+      window.removeEventListener("pushstate", updatePath);
+    };
+  }, []);
+
   return (
     <NavigationMenu>
       <NavigationMenuList className="flex justify-center space-x-2">
-        {middleMenuItems.map((item) => item.content ? (
-          <NavigationMenuItem key={item.path}>
-            <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-            <NavigationMenuContent className="w-[400px] lg:w-[560px] left-1/2 -translate-x-1/2">
-              <div className="p-4">{item.content}</div>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-        ) : (
-            <NavigationMenuItem key={item.path}>
-                <NavigationMenuLink href={item.path} className={navigationMenuTriggerStyle()}>
-                    {item.title}
-                </NavigationMenuLink>
+        {middleMenuItems.map((item) => {
+          const isActive = pathname === item.path;
+
+          return item.content ? (
+            <NavigationMenuItem
+              key={item.path}
+              className={isActive ? 'is-active' : ''}
+            >
+              <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+              <NavigationMenuContent className="w-[400px] lg:w-[560px] left-1/2 -translate-x-1/2">
+                <div className="p-4">{item.content}</div>
+              </NavigationMenuContent>
             </NavigationMenuItem>
-        ))}
+          ) : (
+            <NavigationMenuItem
+              key={item.path}
+              className={`${isActive ? 'is-active' : ''}`}
+            >
+              <NavigationMenuLink
+                href={item.path}
+                className={navigationMenuTriggerStyle()}
+              >
+                {item.title}
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+          );
+        })}
       </NavigationMenuList>
       <NavigationMenuViewport />
     </NavigationMenu>
   );
 }
+

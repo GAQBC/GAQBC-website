@@ -6,7 +6,7 @@
 @custom-variant dark (&:is(.dark *));
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 :root {
@@ -161,8 +161,14 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
-    }
+  }
+
   body {
     @apply bg-background text-foreground;
-    }
+  }
+}
+
+.is-active>a {
+  font-weight: bold;
+  color: var(--accent-foreground);
 }

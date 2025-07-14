@@ -1,6 +1,5 @@
 ---
 import '/src/styles/global.css';
-import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
 import { buttonVariants } from '@/components/ui/button';
 import NavbarMiddle from '@/components/navMiddle.tsx';
 
@@ -19,10 +18,35 @@ const middleMenuItems = [
   },
 ];
 ---
+<style>
+.is-active > a {
+  font-weight: bold;
+  color: var(--accent-foreground);
+}
 
-<nav class="relative flex items-center w-full p-6 bg-transparent">
-     <div class="flex items-center space-x-4">
-        <img src="/logo.png" alt="logo" class="w-8 h-8"/>
+#navbar {
+  transition: box-shadow 0.5s ease;
+}
+
+#navbar.scrolled {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+</style>
+
+<script>
+  window.addEventListener("scroll", function () {
+    const navbar = document.getElementById("navbar");
+    if (window.scrollY > 10) {
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
+  });
+</script>
+
+<nav id="navbar" class="sticky top-0 flex items-center w-full p-6 bg-background">
+    <div class="flex items-center space-x-4">
+        <a href="/"><img src="/logo.png" alt="logo" class="w-8 h-8"/></a>
     </div>
     <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-12">
         <NavbarMiddle client:load />

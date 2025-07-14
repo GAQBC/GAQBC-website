@@ -1,0 +1,8 @@
+---
+import { Button as sButton } from '@/components/ui/button';
+const { class: className, ...rest } = Astro.props;
+---
+
+<sButton class:list={[className]} {...rest}>
+  <slot />
+</sButton>

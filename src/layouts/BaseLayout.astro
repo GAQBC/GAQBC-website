@@ -22,15 +22,15 @@ const realTitle = title
         <link rel="icon" href="/logo.png" />
         <meta content="gaqbc description" property="og:description" />
 
-        <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
-        <SEO
-            title={realTitle}
-            description="Georgia Quizbowl Community"
-            canonical={canonicalURL}
-        />
-    </head>
-    <body>
-        <Navbar />
-        <slot />
-    </body>
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={realTitle}
+      description="Georgia Quizbowl Community"
+      canonical={canonicalURL}
+    />
+  </head>
+  <body class="h-screen bg-background text-foreground">
+    <Navbar />
+    <slot />
+  </body>
 </html>

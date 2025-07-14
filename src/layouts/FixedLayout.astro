@@ -1,0 +1,36 @@
+---
+import "/src/styles/global.css";
+import { SEO } from "astro-seo";
+import { Icon } from "astro-icon/components";
+
+import Navbar from "/src/components/navbar.astro";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+
+const { title } = Astro.props;
+
+const realTitle = title
+    ? title + " | " + "GAQBC"
+    : "Georgia Quizbowl Community";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" href="/logo.png" />
+        <meta content="gaqbc description" property="og:description" />
+
+    <!-- <link rel="preload" as="image" href={src} alt="Hero" /> -->
+    <SEO
+      title={realTitle}
+      description="Georgia Quizbowl Community"
+      canonical={canonicalURL}
+    />
+  </head>
+  <body class="h-screen flex flex-col bg-background text-foreground">
+    <Navbar />
+    <slot />
+  </body>
+</html>

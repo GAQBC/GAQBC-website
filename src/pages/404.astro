@@ -1,22 +1,174 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
+import FixedLayout from "../layouts/FixedLayout.astro";
 ---
 
-<BaseLayout>
-	<div class="center">
-		<h1 class="fof">404 Not Found</h1>
-		<p class="foftext">Neg five. Continuing for the other team...</p>
+<FixedLayout>
+	<div class="flex flex-col justify-center flex-1">
+		<div class="phase1 absolute place-self-center">
+			<div class="qbr-badge buzz-button bg-[#0d6efd]">Buzz!</div>
+		</div>
+		<div class="phase2 absolute grow flex gap-[30px] px-[24px] w-full items-stretch opacity-0">
+			<div class="grow flex h-full">
+				<span class="flex items-center text-3xl grow text-accent px-[15px] py-[17px] rounded-tl-[15px] rounded-bl-[15px] border-muted border-[2px] border-r-[0px] break-all"><span id="typing" class="shrinktext">Enter answer</span></span>
+				<div class="flex items-center text-3xl text-white bg-[#198754] border-[2px] border-[#198754] px-[15px] py-[17px] rounded-tr-[15px] rounded-br-[15px]"><span class="shrinktext">Submit</span></div>
+			</div>
+			<div class="lg:w-[250px] md:w-[150px] p-[15px] flex justify-center rounded-[15px] timerbox items-center self-stretch"><span id="timer" class="text-5xl font-bold shrinktext">5.0</span></div>
+		</div>
+		<div class="phase3 opacity-0 flex flex-col gap-[100px] absolute place-self-center items-center">
+			<div class="qbr-badge neg-button bg-[#dc3545]">404 Not Found</div>
+			<span class="text-3xl italic">Invalid URL for <span class="font-bold color-[#dc3545]">-5</span> points.</span>
+		</div>
 	</div>
-</BaseLayout>
 
-<style>
-	.fof {
-		font-size: 140px;
-		color: red;
-		font-weight: bolder;
-	}
+	<style>
+		.qbr-badge {
+			display: inline-block;
+			padding: 0.1em 0.65em;
+			font-size: 70px;
+			font-weight: 700;
+			color: #fff;
+			text-align: center;
+			border-radius: 25px;
+		}
 
-	.foftext {
-		font-size: 30px;
-	}
-</style>
+		.buzz-button {
+			animation: buzzpress 0.8s linear 0.5s 1 forwards, fadeout 0.2s linear 1.3s 1 forwards;
+		}
+
+		.phase2 {
+			animation: fadein 0.5s linear 1.5s 1 forwards, submitpress 0.8s linear 7s 1 forwards, fadeout 0.2s linear 7.8s 1 forwards;
+		}
+
+		.shrinktext {
+			animation: shrinktext 0.8s linear 7s 1 forwards;
+		}
+
+		.phase3 {
+			animation: fadein 0.8s linear 8.2s 1 forwards
+		}
+
+		.timerbox {
+			background: linear-gradient(#ddd, #eee);
+		}
+
+		@keyframes buzzpress {
+			0% {
+				transform: scale(1);
+			}
+			33% {
+				filter: grayscale(0.2);
+				transform: scale(1.1);
+			}
+			66% {
+				filter: grayscale(0.2);
+				transform: scale(1.1);
+			}
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		@keyframes submitpress {
+			0% {
+				transform: scaleY(1);
+			}
+			33% {
+				filter: grayscale(0.2);
+				transform: scaleY(1.1);
+			}
+			66% {
+				
+				filter: grayscale(0.2);
+				transform: scaleY(1.1);
+			}
+			100% {
+				transform: scaleY(1);
+			}
+		}
+
+		@keyframes shrinktext {
+			0% {
+				transform: scaleY(1);
+			}
+			33% {
+				transform: scaleY(0.90909);
+			}
+			66% {
+				
+				transform: scaleY(0.90909);
+			}
+			100% {
+				transform: scaleY(1);
+			}
+		}
+
+		@keyframes fadein {
+			0% {
+				opacity: 0%;
+			}
+			100% {
+				opacity: 100%;
+			}
+		}
+
+		@keyframes fadeout {
+			0% {
+				opacity: 100%;
+			}
+			100% {
+				opacity: 0%;
+			}
+		}
+	</style>
+
+	<script>
+		let i = 0;
+		let text = String(document.URL);
+		let speed = 4000 / (text.length); 
+		console.log(text);
+
+		function type() {
+			document.getElementById("typing").classList.add("text-secondary-foreground");
+			if (i < text.length) {
+				if (document.getElementById("typing").innerHTML?.includes("Enter answer")) {
+					document.getElementById("typing").innerHTML = "";
+				}
+				document.getElementById("typing").innerHTML += text.charAt(i);
+				i++;
+				setTimeout(type, speed);
+			}
+		}
+
+		setTimeout(type, 2050);
+	</script>
+
+	<script>
+		let timeleft = 5.0;
+
+		function timer() {
+			if (timeleft <= 0) {
+				document.getElementById("timer").innerHTML = "0.0";
+			} else {
+				document.getElementById("timer").innerHTML = Math.round(timeleft * 10)/10;
+				timeleft -= 0.1;
+				setTimeout(timer, 100);
+			}
+		}
+		
+		setTimeout(timer, 1550);
+	</script>
+</FixedLayout>
+
+<!-- 
+Design elements taken from QBReader:
+
+MIT License
+
+Copyright (c) 2025 QBReader
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->

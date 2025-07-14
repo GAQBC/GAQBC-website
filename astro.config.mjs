@@ -14,7 +14,7 @@ export default defineConfig({
   site: "https://gaqbc.org",
   integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });

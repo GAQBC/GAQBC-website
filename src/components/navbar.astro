@@ -1,18 +1,44 @@
 ---
 import '/src/styles/global.css';
 import { Astronav, MenuItems, MenuIcon, Dropdown, DropdownItems, DropdownSubmenu } from "astro-navbar";
+import { buttonVariants } from '@/components/ui/button';
+import NavbarMiddle from '@/components/navMiddle.tsx';
 
-const menuitems = [
+const middleMenuItems = [
   {
     title: "Home",
     path: "/",
   },
   {
-    title: "Test",
-    path: "/test",
+    title: "About",
+    path: "/about",
+  },
+  {
+    title: "Community",
+    path: "/community",
   },
 ];
 ---
 
-<div>
-</div>
+<nav class="relative flex items-center w-full p-6 bg-transparent">
+     <div class="flex items-center space-x-4">
+        <img src="/logo.png" alt="logo" class="w-8 h-8"/>
+    </div>
+    <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-12">
+        <NavbarMiddle client:load />
+    </div>
+    <div class="ml-auto flex items-center space-x-4">
+        <a
+            href="/login"
+            class={buttonVariants({ variant: 'default' })}
+        >
+            Join
+        </a>
+        <a
+            href="/signup"
+            class={buttonVariants({ variant: 'default' })}
+        >
+            Sign Up
+        </a>
+    </div>
+</nav>

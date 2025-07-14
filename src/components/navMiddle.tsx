@@ -113,7 +113,7 @@ export default function NavMiddle() {
     <NavigationMenu>
       <NavigationMenuList className="flex justify-center space-x-2">
         {middleMenuItems.map((item) => {
-          const isActive = pathname === item.path;
+          const isActive = pathname === item.path || pathname.startsWith(item.path + "/");
 
           return item.content ? (
             <NavigationMenuItem

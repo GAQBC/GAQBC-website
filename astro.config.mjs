@@ -9,10 +9,10 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 
 export default defineConfig({
-  site: "https://mitosisphere.org",
-  integrations: [tailwind(), mdx(), sitemap(), icon()],
+    site: "https://mitosisphere.org",
+    integrations: [tailwind(), mdx(), sitemap(), icon()],
 
-  vite: {
-    plugins: [tailwindcss()],
-  },
+    vite: {
+        plugins: [tailwindcss()],
+    },
 });

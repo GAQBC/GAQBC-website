@@ -1,37 +1,37 @@
 [
-  {
-    "name": "Joshua L.",
-    "pfp": "/pfp/Joshua.gif",
-    "discord": "@arlecchinoismyfather",
-    "position": "President",
-    "school": "Johns Creek HS"
-  },
-  {
-    "name": "Kaiden L.",
-    "pfp": "/pfp/Kaiden.png",
-    "discord": "@pellucid1137",
-    "position": "",
-    "school": "Northview HS"
-  },
-  {
-    "name": "Helena H.",
-    "pfp": "/pfp/Helena.png",
-    "discord": "@helenaur",
-    "position": "",
-    "school": "Chattahoochee HS"
-  },
-  {
-    "name": "Sahas G.",
-    "pfp": "/pfp/Sahas.png",
-    "discord": "@ex0oo",
-    "position": "",
-    "school": "North Gwinnett HS"
-  },
-  {
-    "name": "Vidyut A.",
-    "pfp": "/pfp/Vidyut.gif",
-    "discord": "@icarpal",
-    "position": "",
-    "school": "HS of Math, Science, and Engineering; New York"
-  }
+    {
+        "name": "Joshua L.",
+        "pfp": "/pfp/Joshua.gif",
+        "discord": "@arlecchinoismyfather",
+        "position": "President",
+        "school": "Johns Creek HS"
+    },
+    {
+        "name": "Kaiden L.",
+        "pfp": "/pfp/Kaiden.png",
+        "discord": "@pellucid1137",
+        "position": "",
+        "school": "Northview HS"
+    },
+    {
+        "name": "Helena H.",
+        "pfp": "/pfp/Helena.png",
+        "discord": "@helenaur",
+        "position": "",
+        "school": "Chattahoochee HS"
+    },
+    {
+        "name": "Sahas G.",
+        "pfp": "/pfp/Sahas.png",
+        "discord": "@ex0oo",
+        "position": "",
+        "school": "North Gwinnett HS"
+    },
+    {
+        "name": "Vidyut A.",
+        "pfp": "/pfp/Vidyut.gif",
+        "discord": "@icarpal",
+        "position": "",
+        "school": "HS of Math, Science, and Engineering; New York"
+    }
 ]

@@ -146,18 +146,6 @@ export default function NavMobile() {
                                 Join
                             </a>
                         </Button>
-                        <Button
-                            asChild
-                            variant="secondary"
-                            className="mx-auto mt-2 w-[50%]"
-                        >
-                            <a
-                                href="/signup"
-                                className="block w-full py-2 text-center"
-                            >
-                                Sign Up
-                            </a>
-                        </Button>
                     </div>
                 </SheetContent>
             </Sheet>

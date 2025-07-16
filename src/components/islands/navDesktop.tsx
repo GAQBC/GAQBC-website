@@ -30,9 +30,6 @@ export default function NavDesktop() {
                 <Button asChild>
                     <a href="/login">Join</a>
                 </Button>
-                <Button asChild>
-                    <a href="/signup">Sign Up</a>
-                </Button>
             </div>
         </nav>
     );

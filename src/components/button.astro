@@ -1,8 +1,8 @@
 ---
-import { Button as sButton } from '@/components/ui/button';
+import { Button as B } from "@/components/ui/button.tsx";
 const { class: className, ...rest } = Astro.props;
 ---
 
-<sButton class:list={[className]} {...rest}>
-  <slot />
-</sButton>
+<B className={className} {...rest}>
+    <slot />
+</B>

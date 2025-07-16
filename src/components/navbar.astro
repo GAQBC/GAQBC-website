@@ -1,63 +1,39 @@
 ---
-import '/src/styles/global.css';
-import { buttonVariants } from '@/components/ui/button';
-import NavbarMiddle from '@/components/navMiddle.tsx';
-
-const middleMenuItems = [
-  {
-    title: "Home",
-    path: "/",
-  },
-  {
-    title: "About",
-    path: "/about",
-  },
-  {
-    title: "Community",
-    path: "/community",
-  },
-];
+import NavDesktop from "@/components/islands/navDesktop.tsx";
+import NavMobile from "@/components/islands/navMobile.tsx";
 ---
-<style>
-#navbar {
-  transition: box-shadow 0.5s ease;
-}
 
-#navbar.scrolled {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+<NavDesktop client:media="(min-width: 769px)" />
+<NavMobile client:media="(max-width: 768px)" />
+
+<style is:global>
+    @media (min-width: 769px) {
+        nav[data-type="mobile"] {
+            display: none !important;
+        }
+    }
+    @media (max-width: 768px) {
+        nav[data-type="desktop"] {
+            display: none !important;
+        }
+    }
+
+    #nav[data-type="desktop"] {
+        transition: box-shadow 0.5s ease;
+    }
+
+    #nav[data-type="desktop"].scrolled {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 </style>
 
 <script>
-  window.addEventListener("scroll", function () {
-    const navbar = document.getElementById("navbar");
-    if (window.scrollY > 10) {
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  });
+    window.addEventListener("scroll", function () {
+        const navbar = document.getElementById("nav-desktop");
+        if (window.scrollY > 10) {
+            navbar!.classList.add("scrolled");
+        } else {
+            navbar!.classList.remove("scrolled");
+        }
+    });
 </script>
-
-<nav id="navbar" class="sticky top-0 flex items-center w-full p-6 bg-background">
-    <div class="flex items-center space-x-4">
-        <a href="/"><img src="/logo.png" alt="logo" class="w-8 h-8"/></a>
-    </div>
-    <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-12">
-        <NavbarMiddle client:load />
-    </div>
-    <div class="ml-auto flex items-center space-x-4">
-        <a
-            href="/login"
-            class={buttonVariants({ variant: 'default' })}
-        >
-            Join
-        </a>
-        <a
-            href="/signup"
-            class={buttonVariants({ variant: 'default' })}
-        >
-            Sign Up
-        </a>
-    </div>
-</nav>

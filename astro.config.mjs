@@ -11,10 +11,20 @@ import react from "@astrojs/react";
 // https://astro.build/config
 
 export default defineConfig({
-  site: "https://gaqbc.org",
-  integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
-
+    site: "https://gaqbc.org",
+    integrations: [tailwind(), mdx(), sitemap(), icon(), react()],
     vite: {
         plugins: [tailwindcss()],
+        server: {
+            hmr: {
+                protocol: "ws",
+                host: "localhost",
+                port: 4320,
+                clientPort: 4320,
+            },
+        },
+    },
+    devToolbar: {
+        enabled: false,
     },
 });

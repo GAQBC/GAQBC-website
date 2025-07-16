@@ -3,169 +3,212 @@ import FixedLayout from "../layouts/FixedLayout.astro";
 ---
 
 <FixedLayout>
-	<div class="flex-col justify-center flex-1 md:flex hidden">
-		<div class="phase1 absolute place-self-center">
-			<div class="qbr-badge text-[70px] buzz-button bg-[#0d6efd]">Buzz!</div>
-		</div>
-		<div class="phase2 absolute grow flex gap-[30px] px-[24px] w-full items-stretch opacity-0">
-			<div class="grow flex h-full">
-				<span class="flex items-center text-3xl grow text-accent px-[15px] py-[17px] rounded-tl-[15px] rounded-bl-[15px] border-muted border-[2px] border-r-[0px] break-all"><span id="typing" class="shrinktext">Enter answer</span></span>
-				<div class="flex items-center text-3xl text-white bg-[#198754] border-[2px] border-[#198754] px-[15px] py-[17px] rounded-tr-[15px] rounded-br-[15px]"><span class="shrinktext">Submit</span></div>
-			</div>
-			<div class="lg:w-[250px] md:w-[150px] p-[15px] flex justify-center rounded-[15px] timerbox items-center self-stretch"><span id="timer" class="text-5xl font-bold shrinktext">5.0</span></div>
-		</div>
-		<div class="phase3 opacity-0 flex flex-col gap-[100px] absolute place-self-center items-center">
-			<div class="qbr-badge text-[70px] neg-button bg-[#dc3545]">404 Not Found</div>
-			<span class="text-3xl italic">Invalid URL for <span class="font-bold color-[#dc3545]">-5</span> points.</span>
-		</div>
-	</div>
-	<div class="flex flex-col justify-center flex-1 md:hidden">
-		<div class="phase3-mobile opacity-0 flex flex-col gap-[50px] absolute place-self-center justify-center items-center px-[24px]">
-			<div class="qbr-badge neg-button bg-[#dc3545] text-6xl">404 Not Found</div>
-			<span class="text-xl italic">Invalid URL for <span class="font-bold color-[#dc3545]">-5</span> points.</span>
-		</div>
-	</div>
+    <div class="hidden flex-1 flex-col justify-center md:flex">
+        <div class="phase1 absolute place-self-center">
+            <div class="qbr-badge buzz-button bg-[#0d6efd] text-[70px]">
+                Buzz!
+            </div>
+        </div>
+        <div
+            class="phase2 absolute flex w-full grow items-stretch gap-[30px] px-[24px] opacity-0"
+        >
+            <div class="flex h-full grow">
+                <span
+                    class="text-accent border-muted flex grow items-center rounded-tl-[15px] rounded-bl-[15px] border-[2px] border-r-[0px] px-[15px] py-[17px] text-3xl break-all"
+                    ><span id="typing" class="shrinktext">Enter answer</span
+                    ></span
+                >
+                <div
+                    class="flex items-center rounded-tr-[15px] rounded-br-[15px] border-[2px] border-[#198754] bg-[#198754] px-[15px] py-[17px] text-3xl text-white"
+                >
+                    <span class="shrinktext">Submit</span>
+                </div>
+            </div>
+            <div
+                class="timerbox flex items-center justify-center self-stretch rounded-[15px] p-[15px] md:w-[150px] lg:w-[250px]"
+            >
+                <span id="timer" class="shrinktext text-5xl font-bold">5.0</span
+                >
+            </div>
+        </div>
+        <div
+            class="phase3 absolute flex flex-col items-center gap-[100px] place-self-center opacity-0"
+        >
+            <div class="qbr-badge neg-button bg-[#dc3545] text-[70px]">
+                404 Not Found
+            </div>
+            <span class="text-3xl italic"
+                >Invalid URL for <span class="color-[#dc3545] font-bold"
+                    >-5</span
+                > points.</span
+            >
+        </div>
+    </div>
+    <div class="flex flex-1 flex-col justify-center md:hidden">
+        <div
+            class="phase3-mobile absolute flex flex-col items-center justify-center gap-[50px] place-self-center px-[24px] opacity-0"
+        >
+            <div class="qbr-badge neg-button bg-[#dc3545] text-6xl">
+                404 Not Found
+            </div>
+            <span class="text-xl italic"
+                >Invalid URL for <span class="color-[#dc3545] font-bold"
+                    >-5</span
+                > points.</span
+            >
+        </div>
+    </div>
 
-	<style>
-		.qbr-badge {
-			display: inline-block;
-			padding: 0.2em 0.65em;
-			font-weight: 700;
-			color: #fff;
-			text-align: center;
-			border-radius: 25px;
-		}
+    <style>
+        .qbr-badge {
+            display: inline-block;
+            padding: 0.2em 0.65em;
+            font-weight: 700;
+            color: #fff;
+            text-align: center;
+            border-radius: 25px;
+        }
 
-		.buzz-button {
-			animation: buzzpress 0.8s linear 0.5s 1 forwards, fadeout 0.2s linear 1.3s 1 forwards;
-		}
+        .buzz-button {
+            animation:
+                buzzpress 0.8s linear 0.5s 1 forwards,
+                fadeout 0.2s linear 1.3s 1 forwards;
+        }
 
-		.phase2 {
-			animation: fadein 0.5s linear 1.5s 1 forwards, submitpress 0.8s linear 7s 1 forwards, fadeout 0.2s linear 7.8s 1 forwards;
-		}
+        .phase2 {
+            animation:
+                fadein 0.5s linear 1.5s 1 forwards,
+                submitpress 0.8s linear 7s 1 forwards,
+                fadeout 0.2s linear 7.8s 1 forwards;
+        }
 
-		.shrinktext {
-			animation: shrinktext 0.8s linear 7s 1 forwards;
-		}
+        .shrinktext {
+            animation: shrinktext 0.8s linear 7s 1 forwards;
+        }
 
-		.phase3 {
-			animation: fadein 0.8s linear 8.2s 1 forwards
-		}
+        .phase3 {
+            animation: fadein 0.8s linear 8.2s 1 forwards;
+        }
 
-		.phase3-mobile {
-			animation: fadein 0.8s linear 0s 1 forwards
-		}
+        .phase3-mobile {
+            animation: fadein 0.8s linear 0s 1 forwards;
+        }
 
-		.timerbox {
-			background: linear-gradient(#ddd, #eee);
-		}
+        .timerbox {
+            background: linear-gradient(#ddd, #eee);
+        }
 
-		@keyframes buzzpress {
-			0% {
-				transform: scale(1);
-			}
-			33% {
-				filter: grayscale(0.2);
-				transform: scale(1.1);
-			}
-			66% {
-				filter: grayscale(0.2);
-				transform: scale(1.1);
-			}
-			100% {
-				transform: scale(1);
-			}
-		}
+        @keyframes buzzpress {
+            0% {
+                transform: scale(1);
+            }
+            33% {
+                filter: grayscale(0.2);
+                transform: scale(1.1);
+            }
+            66% {
+                filter: grayscale(0.2);
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
 
-		@keyframes submitpress {
-			0% {
-				transform: scaleY(1);
-			}
-			33% {
-				filter: grayscale(0.2);
-				transform: scaleY(1.1);
-			}
-			66% {
-				
-				filter: grayscale(0.2);
-				transform: scaleY(1.1);
-			}
-			100% {
-				transform: scaleY(1);
-			}
-		}
+        @keyframes submitpress {
+            0% {
+                transform: scaleY(1);
+            }
+            33% {
+                filter: grayscale(0.2);
+                transform: scaleY(1.1);
+            }
+            66% {
+                filter: grayscale(0.2);
+                transform: scaleY(1.1);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
 
-		@keyframes shrinktext {
-			0% {
-				transform: scaleY(1);
-			}
-			33% {
-				transform: scaleY(0.90909);
-			}
-			66% {
-				
-				transform: scaleY(0.90909);
-			}
-			100% {
-				transform: scaleY(1);
-			}
-		}
+        @keyframes shrinktext {
+            0% {
+                transform: scaleY(1);
+            }
+            33% {
+                transform: scaleY(0.90909);
+            }
+            66% {
+                transform: scaleY(0.90909);
+            }
+            100% {
+                transform: scaleY(1);
+            }
+        }
 
-		@keyframes fadein {
-			0% {
-				opacity: 0%;
-			}
-			100% {
-				opacity: 100%;
-			}
-		}
+        @keyframes fadein {
+            0% {
+                opacity: 0%;
+            }
+            100% {
+                opacity: 100%;
+            }
+        }
 
-		@keyframes fadeout {
-			0% {
-				opacity: 100%;
-			}
-			100% {
-				opacity: 0%;
-			}
-		}
-	</style>
+        @keyframes fadeout {
+            0% {
+                opacity: 100%;
+            }
+            100% {
+                opacity: 0%;
+            }
+        }
+    </style>
 
-	<script>
-		let i = 0;
-		let text = String(document.URL);
-		let speed = 4000 / (text.length); 
-		console.log(text);
+    <script>
+        let i = 0;
+        let text = String(document.URL);
+        let speed = 4000 / text.length;
+        console.log(text);
 
-		function type() {
-			document.getElementById("typing").classList.add("text-secondary-foreground");
-			if (i < text.length) {
-				if (document.getElementById("typing").innerHTML?.includes("Enter answer")) {
-					document.getElementById("typing").innerHTML = "";
-				}
-				document.getElementById("typing").innerHTML += text.charAt(i);
-				i++;
-				setTimeout(type, speed);
-			}
-		}
+        function type() {
+            document
+                .getElementById("typing")
+                .classList.add("text-secondary-foreground");
+            if (i < text.length) {
+                if (
+                    document
+                        .getElementById("typing")
+                        .innerHTML?.includes("Enter answer")
+                ) {
+                    document.getElementById("typing").innerHTML = "";
+                }
+                document.getElementById("typing").innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
 
-		setTimeout(type, 2050);
-	</script>
+        setTimeout(type, 2050);
+    </script>
 
-	<script>
-		let timeleft = 5.0;
+    <script>
+        let timeleft = 5.0;
 
-		function timer() {
-			if (timeleft <= 0) {
-				document.getElementById("timer").innerHTML = "0.0";
-			} else {
-				document.getElementById("timer").innerHTML = Math.round(timeleft * 10)/10;
-				timeleft -= 0.1;
-				setTimeout(timer, 100);
-			}
-		}
-		
-		setTimeout(timer, 1550);
-	</script>
+        function timer() {
+            if (timeleft <= 0) {
+                document.getElementById("timer").innerHTML = "0.0";
+            } else {
+                document.getElementById("timer").innerHTML =
+                    Math.round(timeleft * 10) / 10;
+                timeleft -= 0.1;
+                setTimeout(timer, 100);
+            }
+        }
+
+        setTimeout(timer, 1550);
+    </script>
 </FixedLayout>
 
 <!-- 
